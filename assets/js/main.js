@@ -10,7 +10,7 @@ if (document.querySelector(".btn-plus")) {
     // quantity.value = quantity.value + 1;
     // console.log(quantity.value);
     let check = $("#product_quantity_remain").val();
-    if (quantity.val() < check) {
+    if (quantity.value < check) {
       ++quantity.value;
     }
   });
