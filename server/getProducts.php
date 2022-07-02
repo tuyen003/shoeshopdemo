@@ -38,3 +38,17 @@ function getRelateProducts($where = '') {
 
     return $products;
 }
+
+
+function getQuantityProduct($id) {
+    include("connect.php");
+    $product = array();
+    $sql = "SELECT * FROM product_size WHERE product_id = {$id}";
+    $result = mysqli_query($conn,$sql);
+
+    while($row = mysqli_fetch_assoc($result)){
+        $product[] = $row;
+    }
+
+    return $product[0]['total_quantity'];
+}
