@@ -130,7 +130,7 @@ if(isset($_GET["code"]))
         </div>
         <div class="mx-auto container">
             <form action="login.php" method="POST" id="login-form">
-                <p><?php if(isset($_GET['error'])){ echo $_GET['error']; } ?></p>
+               
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="text" name="email" id="email" placeholder="email" class="form-control" required>
