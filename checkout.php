@@ -10,10 +10,11 @@
 
   if(!isset($_SESSION['user_info'])){
     header("location: login.php");
+    // exit;
   }
   if(!isset($_SESSION['logged_in'])) {
     header("location: login.php");
-    exit;
+    // exit;
 } 
   if( !empty($_SESSION['cart']) && isset($_POST['checkout'])){
       // user in
