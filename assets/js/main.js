@@ -10,9 +10,9 @@ if (document.querySelector(".btn-plus")) {
     // quantity.value = quantity.value + 1;
     // console.log(quantity.value);
     let check = $("#product_quantity_remain").val();
-    if (quantity >= check) {
-      quantity.value = check;
-    } else ++quantity.value;
+    if (quantity.val() < check) {
+      ++quantity.value;
+    }
   });
 }
 
