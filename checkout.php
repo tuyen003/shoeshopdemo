@@ -18,9 +18,9 @@
       header("location: index.php");
   }
 
-  echo "<pre>";
-  print_r($_SESSION);
-  echo "</pre>";
+  // echo "<pre>";
+  // print_r($_SESSION);
+  // echo "</pre>";
 
   if(isset($_SESSION['cart']) && $_SESSION['total'] != 0) {
     $_SESSION['total'] = calculateTotalCart($_SESSION['cart'])+$ship_money;
