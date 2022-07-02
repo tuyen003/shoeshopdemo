@@ -137,7 +137,7 @@
                             </table>
                         <div class="checkout-btn-container">
                             <!-- <input type="submit" value="Đặt Hàng" class="btn" name="place_order" id="checkout-btn" class="form-control"> -->
-                            <a type="submit" href="?act=checkout&status=1" class="btn" name="place_order" id="checkout-btn" class="form-control">Đặt hàng</a>
+                            <a type="submit" href="checkout.php?act=checkout&status=1" class="btn" name="place_order" id="checkout-btn" class="form-control">Đặt hàng</a>
                         </div>
                         </div>
 
