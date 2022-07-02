@@ -155,11 +155,11 @@ if(isset($_GET["code"]))
                     <a href="register.php" id="register-url" class="btn">Bạn chưa có tài khoản? Đăng ký</a>
                 </div>
 
-                <?php if($_SESSION['forgot_pass'] > 3){
+                <?php if(isset($_GET['error'])){
                     echo '<div class="form-group">
                     <a href="register.php" id="register-url" class="btn">Quên mật khẩu</a>
                     </div>';
-                    $_SESSION['forgot_pass'] = 0;
+                    // $_SESSION['forgot_pass'] = 0;
                 }
                 ?>
 
