@@ -35,7 +35,7 @@ if(isset($_POST['login'])) {
             
             header("location: account.php");
         }else {
-            $_SESSION['forgot_pass'] =  ++$_SESSION['forgot_pass'];
+            $_SESSION['forgot_pass'] =  $_SESSION['forgot_pass'] + 1;
             header("location: login.php?error=login fail");
         }
     } 
