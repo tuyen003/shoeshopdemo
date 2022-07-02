@@ -256,18 +256,18 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Đăng xuất?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-body">Bạn có chắc muốn đăng xuất</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Hủy</button>
 
           <form action="logout.php" method="POST"> 
           
-            <button type="submit" name="logout_btn" class="btn btn-primary">Logout</button>
+            <button type="submit" name="logout_btn" class="btn btn-primary">Đăng xuất</button>
 
           </form>
 
