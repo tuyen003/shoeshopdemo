@@ -59,7 +59,7 @@
                     </div>
                     <div class="form-group checkout-small-element">
                         <label for="phone-number">Số điện thoại</label>
-                        <input type="text" name="phone_number" id="phoneNumber" placeholder="Phone number" class="form-control" required pattern="^[0-9]">
+                        <input type="text" name="phone_number" id="phoneNumber" placeholder="Phone number" class="form-control" required pattern="^[0-9]{10,11}">
                     </div>
                     <!-- <div class="form-group checkout-large-element">
                         <label for="city">Thành phố/ Tỉnh</label>
