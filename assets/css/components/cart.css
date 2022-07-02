@@ -1,0 +1,134 @@
+.cart table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart .product-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cart th {
+  text-align: left;
+  padding: 10px;
+  color: #fff;
+  font-size: 1.4rem;
+  background-color: #fb774b;
+}
+.cart td {
+  padding: 10px;
+  vertical-align: middle;
+}
+
+.cart td img {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+.cart td input {
+  width: 60px;
+  height: 30px;
+  /* padding: 5px; */
+  text-align: center;
+}
+
+.cart td a {
+  color: #fb774b;
+}
+.cart td span {
+  font-size: 1.4rem;
+}
+.cart .remove-btn {
+  font-size: 1.4rem;
+  border: none;
+  background: none;
+  color: #fb774b;
+  text-transform: capitalize;
+  padding-left: none;
+}
+.cart .edit-btn {
+  font-size: 1.4rem;
+}
+.cart .product-info p {
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+.cart .product-info small {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.cart .price-sale {
+  font-size: 1.2rem !important;
+  margin-left: 5px;
+  color: #000000e3;
+  text-decoration-line: line-through;
+  opacity: 0.7;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 0;
+}
+
+.cart-total table {
+  width: 100%;
+  max-width: 500px;
+  border-top: 3px solid #fb774b;
+}
+td:last-child {
+  text-align: right;
+}
+th:last-child {
+  text-align: right;
+}
+
+.checkout-container {
+  display: flex;
+  justify-content: flex-end;
+}
+.checkout-btn {
+  border: none;
+  outline: none;
+  padding: 1rem 2rem;
+  background-color: #fb774b;
+  color: #fff;
+}
+
+.product-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 1rem;
+}
+
+.cart-total td,
+.cart-total td {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.btn-cart {
+  border: none;
+  background: none;
+
+  height: 30px;
+  padding: 0 1rem;
+  color: #fff;
+  border-radius: 7px;
+  width: 30px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.btn-minus-cart {
+  background: #f6aa87;
+}
+
+.btn-plus-cart {
+  background: #abec3b;
+}
+@media screen and (max-width: 800px) {
+}

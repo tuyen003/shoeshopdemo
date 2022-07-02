@@ -1,0 +1,152 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css");
+
+:root {
+  /* -----  FONT STYLES ------- */
+  /* --font-family: Poppins, HelveticaNeue, Helvetica Neue, sans-serif; */
+  --font-family: "Poppins", sans-serif;
+  --font-read: "Open Sans", sans-serif;
+  /* -----  COLOR STYLES ------- */
+  --color-primary: #e85b40;
+  --color-secondary: #8cc32e;
+}
+
+.active-pg {
+  background-color: blue;
+  color: rgb(253, 253, 253);
+}
+
+table td {
+  vertical-align: middle !important;
+}
+
+.delete_btn {
+  color: #fff !important;
+}
+
+.btn-login {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn-login:hover {
+  color: #fff;
+}
+
+#pop-up {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  background: #20202042;
+  bottom: 0;
+  right: 0;
+  z-index: 111;
+  display: none;
+}
+
+.popup-detail-container {
+  transform: translate(-50%, -50%);
+  width: 90%;
+  min-height: 50%;
+  position: absolute;
+  background: #fbf7f7;
+  top: 50%;
+  left: 50%;
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 2px 7px #ff5353;
+}
+
+#pop-up-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #3229279e;
+}
+
+.active-popup-details {
+  display: block !important;
+}
+
+#pop-up-close i {
+  font-size: 3rem;
+  color: #ff3d18;
+  font-weight: bold;
+  transition: all 0.3s ease-out;
+}
+#pop-up-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  cursor: pointer;
+}
+#pop-up-close:hover i {
+  text-shadow: 0 1px 1px #000;
+}
+
+#update-img-btn {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.btn {
+  width: 100%;
+}
+.chart-container {
+  max-width: 400px;
+}
+
+#pop-up table img {
+  width: 80px;
+  height: 80px;
+}
+
+#pop-up table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#pop-up .product-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#pop-up th {
+  font-size: 1.4rem;
+  text-align: left;
+  padding: 10px;
+  color: #fff;
+  background-color: #fb774b;
+}
+#pop-up td {
+  padding: 10px;
+  vertical-align: middle;
+}
+
+#pop-up td:last-child {
+  text-align: right;
+}
+
+#pop-up th:last-child {
+  text-align: right;
+}
+
+#pop-up td img {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+#pop-up td input {
+  width: 75px;
+  height: 30px;
+  padding: 5px;
+}
+
+#pop-up td p {
+  font-size: 1.4rem;
+}
+#pop-up td span {
+  font-size: 1.4rem;
+}

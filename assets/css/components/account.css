@@ -1,0 +1,235 @@
+.account {
+  font-family: var(--font-read);
+}
+.account-info p {
+  margin-bottom: 20px;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+.account-btn-container a {
+  font-size: 1.5rem;
+  border: 1px solid var(--color-secondary);
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  color: #fb774b;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+.account-btn-container a:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+#account-form h3 {
+  font-size: 2rem;
+}
+#account-form input {
+  width: 100%;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  border-radius: 10rem;
+  padding: 1.25rem 2rem;
+}
+#account-form #change-password-btn {
+  background-color: #fb774b;
+  color: #fff;
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  margin-top: 3rem;
+}
+
+#account-form label {
+  font-size: 1.4rem;
+  color: #fb774b;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+#account-form #register-url {
+  color: #fb774b;
+  font-size: 1.2rem;
+}
+
+#account-form {
+  width: 75%;
+  margin: 5px auto;
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #fb774b;
+  border: 1px solid #eaffc6;
+  background: #ffeded;
+  border-radius: 2rem;
+  min-height: 35rem;
+  box-shadow: 0 2px 5px #eaffc6;
+}
+
+.detail_order_btn {
+  background: none;
+  border: none;
+  padding: 1rem 2rem;
+  background: var(--color-secondary);
+  color: #fff;
+  border-radius: 2rem;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+}
+#account-form .form-group {
+  margin-bottom: 30px;
+}
+#account-form .form-group label {
+  margin-bottom: 10px;
+}
+.account-info .avatar {
+  width: 5rem;
+  height: 5rem;
+  background-color: #fb774b;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 5rem;
+  display: inline-block;
+  border-radius: 50%;
+  font-size: 3rem;
+}
+
+.orders table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.orders .product-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.orders th {
+  text-align: left;
+  padding: 10px;
+  color: #fff;
+  font-size: 1.4rem;
+  background-color: #fb774b;
+}
+.orders th:last-child {
+  text-align: right;
+}
+.orders td {
+  padding: 10px;
+  vertical-align: middle;
+  text-align: left;
+  font-size: 1.4rem;
+}
+
+.orders td img {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+.orders h2 {
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+#order-details {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  background: #20202042;
+  bottom: 0;
+  right: 0;
+  z-index: 111;
+  display: none;
+}
+
+.order-detail-container {
+  transform: translate(-50%, -50%);
+  width: 90%;
+  min-height: 50%;
+  position: absolute;
+  background: #fbf7f7;
+  top: 50%;
+  left: 50%;
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 2px 7px #ff5353;
+}
+
+#overlay-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #3229279e;
+}
+
+#order-details table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#order-details .product-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#order-details th {
+  font-size: 1.4rem;
+  text-align: left;
+  padding: 10px;
+  color: #fff;
+  background-color: #fb774b;
+}
+#order-details td {
+  padding: 10px;
+  vertical-align: middle;
+}
+
+#order-details th:last-child {
+  text-align: right;
+}
+
+#order-details td img {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+#order-details td input {
+  width: 75px;
+  height: 30px;
+  padding: 5px;
+}
+
+#order-details td p {
+  font-size: 1.4rem;
+}
+#order-details td span {
+  font-size: 1.4rem;
+}
+
+.active-order-details {
+  display: block !important;
+}
+
+#close_popup i {
+  font-size: 3rem;
+  color: #ff3d18;
+  font-weight: bold;
+  transition: all 0.3s ease-out;
+}
+#close_popup {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  cursor: pointer;
+}
+#close_popup:hover i {
+  text-shadow: 0 1px 1px #000;
+}
+
+@media screen and (max-width: 768px) {
+  #account-form input {
+    width: 95%;
+  }
+}

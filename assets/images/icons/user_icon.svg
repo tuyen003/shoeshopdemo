@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="65" height="63.5" viewBox="0 0 65 63.5">
+  <g id="user_icon" transform="translate(-139.5 -494)">
+    <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(157 494)" fill="rgba(233,95,64,0.45)" stroke="#e85b40" stroke-width="4">
+      <circle cx="15" cy="15" r="15" stroke="none"/>
+      <circle cx="15" cy="15" r="13" fill="none"/>
+    </g>
+    <path id="Subtraction_2" data-name="Subtraction 2" d="M59.171,56H.83A45.883,45.883,0,0,1,0,47.282,41.422,41.422,0,0,1,2.358,33.2,33.44,33.44,0,0,1,8.787,22.236a30.422,30.422,0,0,1,2.307-2.331C13.879,27.387,21.476,32.413,30,32.413s16.121-5.026,18.906-12.508a30.428,30.428,0,0,1,2.308,2.33A33.44,33.44,0,0,1,57.642,33.2,41.422,41.422,0,0,1,60,47.282,45.853,45.853,0,0,1,59.171,56Z" transform="translate(142 499)" fill="rgba(232,91,64,0.45)" stroke="#e85b40" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+  </g>
+</svg>

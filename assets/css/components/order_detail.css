@@ -1,0 +1,44 @@
+.order-detail table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.order-detail .product-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.order-detail th {
+  font-size: 1.4rem;
+  text-align: left;
+  padding: 10px;
+  color: #fff;
+  background-color: #fb774b;
+}
+.order-detail td {
+  padding: 10px;
+  vertical-align: middle;
+}
+
+.order-detail th:last-child {
+  text-align: right;
+}
+
+.order-detail td img {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+.order-detail td input {
+  width: 75px;
+  height: 30px;
+  padding: 5px;
+}
+
+.order-detail td p {
+  font-size: 1.4rem;
+}
+.order-detail td span {
+  font-size: 1.4rem;
+}

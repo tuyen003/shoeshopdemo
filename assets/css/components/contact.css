@@ -1,0 +1,10 @@
+#contact {
+  height: 50vh;
+}
+#contact p {
+  font-size: 1.8rem;
+  line-height: 2rem;
+}
+#contact span {
+  color: #fb774b;
+}

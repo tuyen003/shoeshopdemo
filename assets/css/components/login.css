@@ -1,0 +1,70 @@
+/* #login-form {
+  width: 50%;
+  margin: 5px auto;
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #fb774b;
+} */
+
+#login-form input,
+.btn-google {
+  width: 50%;
+  margin: 5px auto;
+  font-size: 1.6rem;
+  border-radius: 10rem;
+  padding: 1.5rem 2rem;
+}
+#login-form #login-btn,
+.btn-google {
+  background-color: #fb774b;
+  color: #fff;
+  font-size: 1.4rem;
+  text-transform: capitalize;
+}
+
+#login-form label {
+  font-size: 1.6rem;
+  color: #fb774b;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+#login-form #register-url {
+  color: #fb774b;
+  font-size: 1.2rem;
+}
+
+#login-form {
+  width: 75%;
+  margin: 5px auto;
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #fb774b;
+  border: 1px solid #eaffc6;
+  background: #ffeded;
+  border-radius: 2rem;
+  min-height: 35rem;
+  box-shadow: 0 2px 5px #eaffc6;
+}
+
+@media screen and (max-width: 768px) {
+  #login-form {
+    width: 95%;
+  }
+  #login-form input,
+  .btn-google {
+    width: 95% !important;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #login-form input,
+  .btn-google {
+    width: 95% !important;
+  }
+}
+
+.btn-google i {
+  margin-right: 1rem;
+  font-size: 1.5rem;
+}
