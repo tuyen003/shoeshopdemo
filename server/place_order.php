@@ -47,7 +47,7 @@ if(isset($_POST['place_order'])) {
     
 
     //5. Remove everything from cart --> delay until payment is done
-        unset($_SESSION['cart']);
+    unset($_SESSION['cart']);
 
     //6. inform user whether everything is fine or there is a problem
     header('location: ../cart.php?order_status="order payment successfully"');
