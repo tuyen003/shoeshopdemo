@@ -85,7 +85,7 @@ if(isset($_POST['login_btn'])) {
             </div>
 
 
-            <div class="p-5">
+            <!-- <div class="p-5">
               <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4">Quên Mật khẩu</h1>
          
@@ -108,7 +108,7 @@ if(isset($_POST['login_btn'])) {
                 </form>
 
 
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
