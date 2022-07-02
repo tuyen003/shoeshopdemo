@@ -238,7 +238,8 @@ $('select[name="provinces"]').each(function() {
 // session_start();
 require('server/connect.php');
 if(isset($_POST['act'])) {
-  if(isset($_POST['status'])){
+  // if(isset($_POST['status'])){
+
     //1. get user info and store it in DB
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
@@ -254,7 +255,7 @@ if(isset($_POST['act'])) {
     $order_date = date('Y-m-d H:i:s');
 
 
-//3. issue new order and store order info in DB
+    //3. issue new order and store order info in DB
     $stmt = $conn->prepare("INSERT INTO orders (order_cost,order_status,user_id,user_name,user_email,user_phone,user_city,user_district,user_address, order_date)
                 VALUES (?,?,?,?,?,?,?,?,?,?); ");
 
@@ -283,12 +284,12 @@ if(isset($_POST['act'])) {
     
 
     //5. Remove everything from cart --> delay until payment is done
-        unset($_SESSION['cart']);
+    unset($_SESSION['cart']);
 
     //6. inform user whether everything is fine or there is a problem
     header('location: cart.php?order_status="order payment successfully"');
     
-  }
+  // }
 } else {
   
   header('location: checkout.php?order_status="order error"');
