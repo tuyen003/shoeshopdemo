@@ -6,6 +6,7 @@ include("layouts/header.php");
 require("server/connect.php");
 require("server/getUser.php");
 header_title("Đăng nhập");
+$_SESSION['forgot_pass'] = 0;
 
 if(isset($_SESSION['logged_in'])) {
     header("location: account.php");
@@ -34,6 +35,7 @@ if(isset($_POST['login'])) {
             
             header("location: account.php");
         }else {
+            $_SESSION['forgot_pass'] =  ++$_SESSION['forgot_pass'];
             header("location: login.php?error=login fail");
         }
     } 
@@ -153,6 +155,13 @@ if(isset($_GET["code"]))
                     <a href="register.php" id="register-url" class="btn">Bạn chưa có tài khoản? Đăng ký</a>
                 </div>
 
+                <?php if($_SESSION['forgot_pass'] > 3){
+                    echo '<div class="form-group">
+                    <a href="register.php" id="register-url" class="btn">Quên mật khẩu</a>
+                    </div>';
+                    $_SESSION['forgot_pass'] = 0;
+                }
+                ?>
 
             </form>
         </div>
