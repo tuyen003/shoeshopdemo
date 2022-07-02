@@ -88,7 +88,7 @@
                 </div>
                 <div class="form-group mt-4">
                     <label for="email">Email</label>
-                    <input type="text" name="email" id="email" value="<?= isset($email)? "{$email}":""; ?>" placeholder="email" class="form-control" required>
+                    <input type="text" name="email" id="email" value="<?= isset($email)? "{$email}":""; ?>" placeholder="email" class="form-control" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
                 </div>
                 <div class="form-group mt-4">
                     <label for="password">Mật khẩu</label>
