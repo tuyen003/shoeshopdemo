@@ -8,15 +8,15 @@
 
  $ship_money = 23000;
 
-
+  if(!isset($_SESSION['user_info'])){
+    header("location: login.php");
+  }
   if( !empty($_SESSION['cart']) && isset($_POST['checkout'])){
       // user in
       // print_r($_SESSION['user_info']);
 
       // no user in
-      if(!isset($_SESSION['user_info'])){
-        header("location: login.php");
-      }
+     
   } else {
       header("location: index.php");
   }
