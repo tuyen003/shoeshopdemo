@@ -9,7 +9,10 @@ if (document.querySelector(".btn-plus")) {
     let quantity = document.querySelector(".form-type-number #quantity");
     // quantity.value = quantity.value + 1;
     // console.log(quantity.value);
-    ++quantity.value;
+    let check = $("#product_quantity_remain").text();
+    if (quantity >= check) {
+      quantity.value = check;
+    } else ++quantity.value;
   });
 }
 

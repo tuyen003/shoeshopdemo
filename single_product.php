@@ -64,7 +64,7 @@
                 <p class="product-rating">đánh giá: </p>
                 <h2 class="price"><span></span> <?php echo $row['product_price']; ?> đ</h2>
                 <h5>tình trạng: <span class="available">còn hàng</span></h5>
-                <h5>Số lượng: <span class="available"><?php echo getQuantityProduct($row['product_id']);?></span></h5>
+                <h5>Số lượng: <span class="available" id="product_quantity_remain"><?php echo getQuantityProduct($row['product_id']);?></span></h5>
                 <h5>danh mục: <span class="categories"><?php echo $row['product_category']; ?></span></h5>
                 <h5 class="mb-55">Màu sắc: <span class="tags"><?php echo $row['product_color']; ?></span></h5>
               
