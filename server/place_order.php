@@ -50,7 +50,7 @@ if(isset($_POST['place_order'])) {
         unset($_SESSION['cart']);
 
     //6. inform user whether everything is fine or there is a problem
-    header('location: ../payment.php?order_status="order payment successfully"');
+    header('location: ../cart.php?order_status="order payment successfully"');
 
 
 } else {
