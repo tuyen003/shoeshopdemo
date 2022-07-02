@@ -11,7 +11,7 @@
 
   if( !empty($_SESSION['cart']) && isset($_POST['checkout'])){
       // user in
-      print_r($_SESSION['user_info']);
+      // print_r($_SESSION['user_info']);
 
       // no user in
   } else {
@@ -137,7 +137,7 @@
                             </table>
                         <div class="checkout-btn-container">
                             <!-- <input type="submit" value="Đặt Hàng" class="btn" name="place_order" id="checkout-btn" class="form-control"> -->
-                            <a type="submit" href="checkout.php?act=checkout&status=1" class="btn" name="place_order" id="checkout-btn" class="form-control">Đặt hàng</a>
+                            <a type="submit" href="checkout?act=checkout&status=1" class="btn" name="place_order" id="checkout-btn" class="form-control">Đặt hàng</a>
                         </div>
                         </div>
 
@@ -235,6 +235,7 @@ $('select[name="provinces"]').each(function() {
 
 
 <?php
+ob_start();
 // session_start();
 require('server/connect.php');
 if(isset($_POST['act'])) {
@@ -254,7 +255,7 @@ if(isset($_POST['act'])) {
     $user_name = $_SESSION['user_info']['user_name'];
     $order_date = date('Y-m-d H:i:s');
 
-
+    echo "Đã chạy";
     //3. issue new order and store order info in DB
     $stmt = $conn->prepare("INSERT INTO orders (order_cost,order_status,user_id,user_name,user_email,user_phone,user_city,user_district,user_address, order_date)
                 VALUES (?,?,?,?,?,?,?,?,?,?); ");
@@ -282,7 +283,7 @@ if(isset($_POST['act'])) {
         $stmt1->execute();
     }
     
-
+    echo "Đã chạy";
     //5. Remove everything from cart --> delay until payment is done
     unset($_SESSION['cart']);
 
