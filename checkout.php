@@ -14,9 +14,14 @@
       // print_r($_SESSION['user_info']);
 
       // no user in
+      if(!isset($_SESSION['user_info'])){
+        header("location: login.php");
+         exit; 
+      }
      
   } else {
-      header("location: index.php");
+      header("location: login.php");
+      exit;
   }
 
   // echo "<pre>";
