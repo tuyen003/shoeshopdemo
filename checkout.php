@@ -1,5 +1,5 @@
 <?php
-
+ob_start();
 //   session_start();
  include("layouts/header.php");
  header_title("Đặt hàng");
@@ -11,17 +11,17 @@
 
   if( !empty($_SESSION['cart']) && isset($_POST['checkout'])){
       // user in
-      // print_r($_SESSION['user_info']);
+      print_r($_SESSION['user_info']);
 
       // no user in
       if(!isset($_SESSION['user_info'])){
         header("location: login.php");
-         exit; 
+        //  exit; 
       }
      
   } else {
-      header("location: login.php");
-      exit;
+      header("location: index.php");
+      // exit;
   }
 
   // echo "<pre>";
