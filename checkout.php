@@ -187,7 +187,7 @@ $('select[name="provinces"]').each(function() {
   c.forEach(function(i, e) {
     e += +1
     console.log(e,i);
-    stc += '<option value=' + i + ' data-provinces='+e+'>' + i + '</option>'
+    stc += '<option value="' + i + '" data-provinces="'+e+'" >' + i + '</option>'
     $this.html('<option value="">Tỉnh / Thành phố</option>' + stc)
     if (address_1 = localStorage.getItem('address_1_saved')) {
       $('select[name="provinces"] option').each(function() {
