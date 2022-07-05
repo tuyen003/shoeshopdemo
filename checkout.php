@@ -11,17 +11,15 @@ ob_start();
 
   if( !empty($_SESSION['cart']) && isset($_POST['checkout'])){
       // user in
-      print_r($_SESSION['user_info']);
+      // print_r($_SESSION['user_info']);
 
       // no user in
       if(!isset($_SESSION['user_info'])){
         header("location: login.php");
-        //  exit; 
       }
      
   } else {
       header("location: index.php");
-      // exit;
   }
 
   // echo "<pre>";
@@ -66,10 +64,7 @@ ob_start();
                         <label for="phone-number">Số điện thoại</label>
                         <input type="text" name="phone_number" id="phoneNumber" placeholder="Phone number" class="form-control" required pattern="^[0-9]{10,11}">
                     </div>
-                    <!-- <div class="form-group checkout-large-element">
-                        <label for="city">Thành phố/ Tỉnh</label>
-                        <input type="text" name="city" id="city" placeholder="City" class="form-control" required>
-                    </div> -->
+                   
                     <div class="form-group checkout-large-element">
                         <label for="">Tỉnh/ Thành Phố</label>
                         <select name="provinces" required class="form-control">
@@ -191,6 +186,7 @@ $('select[name="provinces"]').each(function() {
     stc = ''
   c.forEach(function(i, e) {
     e += +1
+    console.log(e,i);
     stc += '<option value=' + e + '>' + i + '</option>'
     $this.html('<option value="">Tỉnh / Thành phố</option>' + stc)
     if (address_1 = localStorage.getItem('address_1_saved')) {
@@ -235,70 +231,3 @@ $('select[name="provinces"]').each(function() {
 })
 //]]></script> 
 
-
-
-
-
-
-<?php
-// ob_start();
-// session_start();
-// require('server/connect.php');
-// if(isset($_POST['act'])) {
-//   // if(isset($_POST['status'])){
-
-//     //1. get user info and store it in DB
-//     $first_name = $_POST['first_name'];
-//     $last_name = $_POST['last_name'];
-//     $email = $_POST['email'];
-//     $phone_number = $_POST['phone_number'];
-//     $city = $_POST['provinces'];
-//     $district = $_POST['district'];
-//     $address = $_POST['address'];
-//     $order_cost = $_SESSION['total'];
-//     $order_status = 'on_hold';
-//     $user_id = $_SESSION['user_info']['user_id'];
-//     $user_name = $_SESSION['user_info']['user_name'];
-//     $order_date = date('Y-m-d H:i:s');
-
-//     echo "Đã chạy";
-//     //3. issue new order and store order info in DB
-//     $stmt = $conn->prepare("INSERT INTO orders (order_cost,order_status,user_id,user_name,user_email,user_phone,user_city,user_district,user_address, order_date)
-//                 VALUES (?,?,?,?,?,?,?,?,?,?); ");
-
-//     $stmt->bind_param('isississss',$order_cost,$order_status,$user_id,$user_name,$email,$phone_number,$city,$district,$address,$order_date);
-    
-//     $stmt->execute();
-
-//     $order_id = $stmt->insert_id;
-//     //2. get products from cart (from session)
-//     foreach ($_SESSION['cart'] as $key => $value) {
-//         # code...
-//         $product = $_SESSION['cart'][$key];
-//         $product_id = $product['product_id'];
-//         $product_name = $product['product_name'];
-//         $product_image = $product['product_image'];
-//         $product_price = $product['product_price'];
-//         $product_quantity = $product['product_quantity'];
-//         $product_size = $product['product_size'];
-
-//         //4. store each single item in order_items DB
-//         $stmt1 = $conn->prepare("INSERT INTO order_items (order_id,product_id,product_name,product_image,product_price,product_quantity,user_id,order_date,product_size)
-//                         VALUES (?,?,?,?,?,?,?,?,?);");
-//         $stmt1->bind_param('iissiiisi',$order_id,$product_id,$product_name,$product_image,$product_price,$product_quantity,$user_id,$order_date,$product_size);
-//         $stmt1->execute();
-//     }
-    
-//     echo "Đã chạy";
-//     //5. Remove everything from cart --> delay until payment is done
-//     unset($_SESSION['cart']);
-
-//     //6. inform user whether everything is fine or there is a problem
-//     header('location: cart.php?order_status="order payment successfully"');
-    
-//   // }
-// } else {
-  
-//   header('location: checkout.php?order_status="order error"');
-// }
-?>
