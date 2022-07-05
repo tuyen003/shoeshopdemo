@@ -187,7 +187,7 @@ $('select[name="provinces"]').each(function() {
   c.forEach(function(i, e) {
     e += +1
     console.log(e,i);
-    stc += '<option value=' + e + '>' + i + '</option>'
+    stc += '<option value=' + i + ' data-provinces='+e+'>' + i + '</option>'
     $this.html('<option value="">Tỉnh / Thành phố</option>' + stc)
     if (address_1 = localStorage.getItem('address_1_saved')) {
       $('select[name="provinces"] option').each(function() {
@@ -195,7 +195,7 @@ $('select[name="provinces"]').each(function() {
           $(this).attr('selected', '')
         }
       })
-      $('input.billing_address_1').attr('value', address_1)
+      $('input.billing_address_1').attr('data-provinces', address_1)
     }
     $this.on('change', function(i) {
       i = $this.children('option:selected').index() - 1
