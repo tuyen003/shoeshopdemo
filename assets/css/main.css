@@ -127,6 +127,9 @@ h1 {
 input {
   font-size: 1.4rem;
 }
+.form-control input {
+  font-size: 1.4rem !important;
+}
 
 .sub-category-container {
   padding: 2rem;
