@@ -124,6 +124,9 @@ h1 {
   font-size: var(--font-size-header);
   font-family: var(--font-family);
 }
+input {
+  font-size: 1.4rem;
+}
 
 .sub-category-container {
   padding: 2rem;
@@ -544,10 +547,10 @@ iframe {
   bottom: 100px !important;
   margin: 0px 8px !important;
   right: -7px !important;
-  transform: scale(.7) !important;
-} 
+  transform: scale(0.7) !important;
+}
 ._94ve {
- bottom: 70px !important;
+  bottom: 70px !important;
   left: 8px !important;
 }
 
