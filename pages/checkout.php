@@ -4,8 +4,6 @@ ob_start();
 
  header_title("Đặt hàng");
 
-
-
  $ship_money = 23000;
 
 
@@ -15,11 +13,11 @@ ob_start();
 
       // no user in
       if(!isset($_SESSION['user_info'])){
-        header("location: login.php");
+        header("location: ?page=login");
       }
      
   } else {
-      header("location: index.php");
+      header("location: ?page=");
   }
 
   // echo "<pre>";
