@@ -125,7 +125,7 @@ h1 {
   font-family: var(--font-family);
 }
 input {
-  font-size: 1.4rem;
+  font-size: 1.4rem !important;
 }
 .form-control input {
   font-size: 1.4rem !important;

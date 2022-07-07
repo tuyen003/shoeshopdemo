@@ -167,7 +167,6 @@ function getDataHtml(data) {
 }
 
 /// Get Tỉnh Thành pHố
-
 if ((address_2 = localStorage.getItem("address_2_saved"))) {
   $('select[name="district"] option').each(function () {
     if ($(this).text() == address_2) {

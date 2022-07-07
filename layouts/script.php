@@ -6,19 +6,13 @@
 
   <script src="assets/js/lib/jquery-3.6.0.min.js" type="text/javascript"></script>
   <script src="assets/js/lib/zoom.js?v<?php echo time();?>"></script>
-  
   <script src="assets/js/app.js?v<?php echo time();?>"></script>
   <script src="assets/js/product-detail.js?v<?php echo time();?>"></script>
-  
- 
-  <script src="assets/js/main.js?v<?php echo time();?>">" ></script>
   <script src="assets/js/display-order.js?v<?php echo time();?>">" ></script>
-
-
   <script src="assets/js/review.js?v<?php echo time();?>"></script>
-
   <script src="assets/js/wishlist.js?v<?php echo time();?>"></script>
   <script src='assets/js/lib/districts.min.js?v<?php echo time();?>'> </script>
+  <script src="assets/js/main.js?v<?php echo time();?>">" ></script>
   <script>
   $(document).ready(function(){
     $("#btn--scroll-top").click(function() {

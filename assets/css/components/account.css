@@ -28,6 +28,7 @@
   width: 100%;
   margin: 0 auto;
   border-radius: 10rem;
+  font-size: 1.4rem;
   padding: 1.25rem 2rem;
 }
 #account-form #change-password-btn {
