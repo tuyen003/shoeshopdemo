@@ -18,6 +18,7 @@
   <script src="assets/js/review.js?v<?php echo time();?>"></script>
 
   <script src="assets/js/wishlist.js?v<?php echo time();?>"></script>
+  <script src='assets/js/lib/districts.min.js?v<?php echo time();?>'> </script>
   <script>
   $(document).ready(function(){
     $("#btn--scroll-top").click(function() {
