@@ -14,6 +14,10 @@
   <script src="assets/js/main.js?v<?php echo time();?>">" ></script>
   <script src="assets/js/display-order.js?v<?php echo time();?>">" ></script>
 
+
+  <script src="assets/js/review.js?v<?php echo time();?>"></script>
+
+  <script src="assets/js/wishlist.js?v<?php echo time();?>"></script>
   <script>
   $(document).ready(function(){
     $("#btn--scroll-top").click(function() {
@@ -21,6 +25,15 @@
       return false;
     });
 
+
+    if($(".xzoom,.xzoom-gallery")){
+      $(".xzoom,.xzoom-gallery").xzoom({
+        zoomWidth: 350,
+        tint: "#333",
+        Xoffset:15,
+      })
+    }
+ 
   })
   
   </script>

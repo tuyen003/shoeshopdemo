@@ -1,11 +1,5 @@
 <?php
-session_start();
-include("includes/header.php");
-require("../server/connect.php");
-if(!isset($_SESSION['admin_logged_in'])){
-    header("location: login.php");
-    exit;
-}
+
 if(isset($_GET['product_id'])){
     $product_id = $_GET['product_id'];
     $stmt = $conn->prepare("SELECT * FROM products WHERE product_id = ?");
@@ -48,9 +42,6 @@ if(isset($_GET['product_id'])){
 
 ?>
 
-<?php 
-    include("includes/navbar.php");
-?>
 
      
             <div class="container-fluid">
@@ -61,7 +52,7 @@ if(isset($_GET['product_id'])){
 
             <div class="container-fluid">
                 <div class="table-responsive">
-                    <form action="edit_product.php" method="POST" enctype="multipart/form-data"  >
+                    <form action="?page=edit_product" method="POST" enctype="multipart/form-data"  >
                     <p><?php if(isset($_GET['error'])) {echo $_GET['error'];}  ?></p>
                     
                     <?php 
@@ -113,7 +104,3 @@ if(isset($_GET['product_id'])){
             </div>
 
 
-<?php
-include("includes/footer.php");
-
-?>

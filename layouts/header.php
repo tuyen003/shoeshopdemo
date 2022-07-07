@@ -14,6 +14,8 @@ session_start();?>
       <link type="image/png" sizes="96x96" rel="icon" href="assets/favicon/icons8-shoe-96.png">
 
       <base href="https://php-shoeshop.herokuapp.com/">
+      <!-- <base href="http://localhost/shoeshop.vn/"> -->
+
   <?php 
   function header_title($title){
       echo '<title>'.$title.'</title>';
@@ -61,16 +63,16 @@ session_start();?>
 <nav class="navbar navbar-expand-lg bg-light py-3">
         <div class="container-fluid">
           <div class="nav-left d-flex align-items-center">
-            <a class="navbar-brand" href="index.php">
+            <a class="navbar-brand" href="">
             <!-- <img src="assets/images/logo.png?v" alt="logo" class="w-50"> -->
             <span id="logo">SHOESHOP</span>
             </a>
             <ul class="navbar-nav navbar-dropdown">
               <li class="nav-item">
-                <a class="nav-link" href="index">Trang chủ</a>
+                <a class="nav-link" href="">Trang chủ</a>
               </li>
               <li class="nav-item parent-menu" style="position: relative;">
-                <a class="nav-link" href="shop" >Sản phẩm</a>
+                <a class="nav-link" href="?page=shop" >Sản phẩm</a>
                 <div class="sub-category-container">
                   <ul id="sub-category">
                   <li class="sub-category-item">
@@ -91,14 +93,14 @@ session_start();?>
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact">Liên hệ</a>
+                <a class="nav-link" href="?page=contact">Liên hệ</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="blogs">Blogs</a>
+                <a class="nav-link" href="?page=blogs">Blogs</a>
               </li>
               <li class="nav-item action-dropdown"  style="display:<?php echo isset($_SESSION['user_info'])?'none':'block';?>;" >
-                <a href="login" class="nav-btn btn-login" >Đăng nhập</a>
-                <a href="register" class="nav-btn btn-register">Đăng ký</a>
+                <a href="?page=login" class="nav-btn btn-login" >Đăng nhập</a>
+                <a href="?page=register" class="nav-btn btn-register">Đăng ký</a>
               </li>
             </ul>
           </div>
@@ -106,10 +108,16 @@ session_start();?>
           <div class="navbar-right">
             <ul class="navbar-nav flex-row" >
               <li class="nav-item d-flex justify-content-between align-items-center">
-                <a href="wishlist" class="wishlist-icon ml-3">
+                <a href="?page=wishlist" class="wishlist-icon ml-3">
                 <img src="assets/images/icons/wishlist_icon.svg" alt="wishlist icon">
+                <span id="product-number-wishlist"><?php 
+                  include("server/getNumofRecord.php");
+                  $numbOfWish = isset($_SESSION['user_info'])? getNumOfRecord('wishlist'," user_id = {$_SESSION['user_info']['user_id']}") : 0;
+                  echo $numbOfWish;
+                
+                ?></span>
                 </a>
-                <a href="cart" class="cart-icon">
+                <a href="?page=cart" class="cart-icon">
                   <img src="assets/images/icons/cart_icon.svg" alt="cart icon">
                   <?php
 
@@ -122,7 +130,7 @@ session_start();?>
                   ?>
                   <span id="product-number-cart"><?php echo $number !== 0? $number: 0;?></span>
                 </a>
-                  <a href="account" class="user-icon ml-3" style="display:<?php if(isset($_SESSION['logged_in'])) echo 'block'; else echo 'none'; ?>">
+                  <a href="?page=account" class="user-icon" style="display:<?php if(isset($_SESSION['logged_in'])) echo 'block'; else echo 'none'; ?>">
                  
                   <img src="assets/images/icons/user_icon.svg" alt="user icon">
                   </a>
@@ -133,8 +141,8 @@ session_start();?>
 
               
               <li class="nav-item user-list-action"  style="display:<?php echo isset($_SESSION['user_info'])?'none':'block';?>;" >
-                <a href="login" class="nav-btn btn-login" >Đăng nhập</a>
-                <a href="register" class="nav-btn btn-register">Đăng ký</a>
+                <a href="?page=login" class="nav-btn btn-login" >Đăng nhập</a>
+                <a href="?page=register" class="nav-btn btn-register">Đăng ký</a>
               </li>
             </ul>
           </div>
@@ -145,4 +153,4 @@ session_start();?>
 
 </header>
 
-<?php ob_end_flush();?>
+<?php //ob_end_flush();?>

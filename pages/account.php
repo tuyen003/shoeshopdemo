@@ -1,15 +1,13 @@
 <?php
-  ob_start();
+  // ob_start();
   // session_start();
-  
-  include("layouts/header.php");
-  require("lib/lib.php");
-  require("server/connect.php");
+
+
   header_title("Thông tin tài khoản");
   
 
   if(!isset($_SESSION['logged_in'])) {
-      header("location: login.php");
+      header("location: ?page=login");
       ob_end_flush();
       exit;
     }
@@ -20,22 +18,22 @@
       $confirm_password =  $_POST['confirm_password'];
       
       if($password !== $confirm_password){
-        header("location: account.php?error=password dont match with confirm password");
+        header("location: ?page=account&error=password dont match with confirm password");
         ob_end_flush();
         
       } else if(strlen($password) < 6){
         
-        header("location: account.php?error=password must at least 6 characters");
+        header("location: ?page=account.php&error=password must at least 6 characters");
         ob_end_flush();
       } else {
         $stmt = $conn->prepare("UPDATE users SET user_password = ? WHERE user_email= ?");
         $stmt->bind_param('ss', md5($password),$user_email);
         
         if($stmt->execute()){
-          header("location: account.php?message=password update successfully");
+          header("location: ?page=account&message=password update successfully");
           ob_end_flush();
         } else {
-          header("location: account.php?error=password has been update successfully");
+          header("location: ?page=account.php&error=password has been update successfully");
           ob_end_flush();
 
       }
@@ -66,7 +64,7 @@
     session_destroy();
 
     //redirect page to index.php
-    header("location: login.php");
+    header("location: ?page=login");
     exit;
   }
 
@@ -86,15 +84,15 @@
                     <p class="">Tên: <span id="user-name"><?php echo $_SESSION['user_info']['user_name'];  ?></span></p>
                     <p class="">Email: <span id="user-email"><?php echo $_SESSION['user_info']['user_email'];  ?></span></p>
                     <div class="account-btn-container">
-                      <a href="account#orders" id="order-btn">Lịch sử mua hàng</a>
-                      <a href="account.php?logout=1" id="logout-btn">Đăng xuất</a>
+                      <a href="?page=account#orders" id="order-btn">Lịch sử mua hàng</a>
+                      <a href="?page=account&logout=1" id="logout-btn">Đăng xuất</a>
                     </div>
                     
                 </div>
             </div>
 
             <div class="col-lg-6 col-md-12 col-md-12">
-                <form action="account.php" method="POST" id="account-form">
+                <form action="?page=account" method="POST" id="account-form">
                   <p><?php if(isset($_GET['error'])) echo $_GET['error'] ;  ?></p>   
                   <p><?php if(isset($_GET['message'])) echo $_GET['message'] ;  ?></p>   
                 <h3>Đổi mật khẩu</h3>
@@ -187,10 +185,4 @@
           </table>
           </div>
       </section>
-
-
-
-<?php
-  include("layouts/footer.php");
-?>
 

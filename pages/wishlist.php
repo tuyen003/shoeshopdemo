@@ -1,8 +1,5 @@
 <?php
-  // session_start();
-  include("layouts/header.php");
-  require("lib/lib.php");
-  require("server/connect.php");
+
   header_title("Sản phẩm yêu thích");
   
   $product_wishlist = array();
@@ -40,7 +37,7 @@
                       class="w-100 product-img"
                     />
                   </div>
-                  <a class="d-flex justify-content-between pt-4 " href="<?php echo "single_product.php?product_id=".$product['product_id']; ?>">
+                  <a class="d-flex justify-content-between pt-4 " href="<?php echo "?page=product&product_id=".$product['product_id']; ?>">
                     <div class="product-name"><?= $product['product_name']; ?></div>
                     <div class="product-rate">
                       <i class="fa-solid fa-star"></i>
@@ -65,7 +62,3 @@
 
 
 
-<?php
-  include("layouts/footer.php");
-  ?>
-  <script src="assets/js/wishlist.js?v<?php echo time();?>"></script>

@@ -1,7 +1,6 @@
 <?php
   // session_start();
-  include("layouts/header.php");
-  require("lib/lib.php");
+
   header_title("Giỏ hàng");
 
   if(isset($_POST['add_to_cart'])) {
@@ -114,7 +113,7 @@
                 
                 </div>
                 <br>
-                <form action="cart.php" method="POST">
+                <form action="?page=cart" method="POST">
                   <input type="hidden" name="product_id" value="<?php echo $value['product_id']; ?>">
                   <button type="submit" value="Remove" name="remove_product" class="remove-btn">xóa</button>
                 </form>
@@ -128,7 +127,7 @@
 
           <td>
             <div class="box-center">
-              <form action="cart.php" method="post">
+              <form action="?page=cart" method="post">
                 <input type="hidden" name="product_id" value="<?php echo $value['product_id']; ?>" class="id">
                 <button type="button" class="btn-minus-cart btn-cart btn-quantity" id="btn-minus">-</button>
                 <input type="number"  value="<?php echo $value['product_quantity']; ?>" min="1" name="quantity" class="quantity" id="quantity" >
@@ -167,7 +166,7 @@
 
 
       <div class="checkout-container">
-        <form action="checkout.php" method="post">
+        <form action="?page=checkout" method="post">
           <button type="submit" class="checkout-btn" name="checkout">Đặt hàng</button>
         </form>
       </div>
@@ -175,12 +174,5 @@
 
 
 
-<?php
-  include("layouts/footer.php");
-?>
 
 
-<script>
-
-
-</script>

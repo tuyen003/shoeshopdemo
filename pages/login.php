@@ -1,15 +1,13 @@
 <?php
 ob_start();
 //   session_start();
-include("layouts/header.php");
 
-require("server/connect.php");
 require("server/getUser.php");
 header_title("Đăng nhập");
 $_SESSION['forgot_pass'] = 0;
 
 if(isset($_SESSION['logged_in'])) {
-    header("location: account.php");
+    header("location: ?page=account");
     exit;
 } 
 
@@ -33,10 +31,10 @@ if(isset($_POST['login'])) {
             $_SESSION['user_info']['user_email'] = $user_email;
             $_SESSION['logged_in'] = true;
             
-            header("location: account.php");
+            header("location: ?page=account");
         }else {
             $_SESSION['forgot_pass'] =  $_SESSION['forgot_pass'] + 1;
-            header("location: login.php?error=login fail");
+            header("location: ?page=login&error=login fail");
         }
     } 
      
@@ -100,7 +98,7 @@ if(isset($_GET["code"]))
     if(checkUserExists($user_email_temp)) {
         $user = getUser($user_email_temp);
             $_SESSION['user_info']['user_id'] = $user[0]['user_id'];
-            header("location: account.php");
+            header("location: ?page=account");
             // exit;
     } else {
         $fname = $_SESSION['user_info']['first_name'];
@@ -109,7 +107,7 @@ if(isset($_GET["code"]))
         if(setUser($fname,$lname,$user_email_temp,$pass)){
             $user = getUser($user_email_temp);
             $_SESSION['user_info']['user_id'] = $user[0]['user_id'];
-            header("location: account.php");
+            header("location: ?page=account");
             // exit;
         }
     }
@@ -129,7 +127,7 @@ if(isset($_GET["code"]))
             <hr class="mx-auto">
         </div>
         <div class="mx-auto container">
-            <form action="login.php" method="POST" id="login-form">
+            <form action="?page=login" method="POST" id="login-form">
                
                 <div class="form-group">
                     <label for="email">Email</label>
@@ -152,12 +150,12 @@ if(isset($_GET["code"]))
               
 
                 <div class="form-group">
-                    <a href="register.php" id="register-url" class="btn">Bạn chưa có tài khoản? Đăng ký</a>
+                    <a href="?page=register" id="register-url" class="btn">Bạn chưa có tài khoản? Đăng ký</a>
                 </div>
 
                 <?php if(isset($_GET['error'])){
                     echo '<div class="form-group">
-                    <a href="register.php" id="register-url" class="btn">Quên mật khẩu</a>
+                    <a href="?page=register" id="register-url" class="btn">Quên mật khẩu</a>
                     </div>';
                     // $_SESSION['forgot_pass'] = 0;
                 }
@@ -167,6 +165,3 @@ if(isset($_GET["code"]))
         </div>
     </section>
 
-<?php
-  include("layouts/footer.php");
-?>

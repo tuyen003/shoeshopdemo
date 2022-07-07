@@ -1,16 +1,10 @@
 
 
 <?php
-ob_start();
-session_start();
-include("includes/header.php");
-include("../server/connect.php");
-require("lib/lib.php");
+
+
 require("lib/sendMail.php");
-if(!isset($_SESSION['admin_logged_in'])){
-    header("location: login.php");
-    exit;
-}
+
 // $product_single = 1;
 if(isset($_GET['page_no']) && $_GET['page_no'] !== ""){
     //when user entered page then page number is a number selected 
@@ -42,9 +36,6 @@ if(isset($_GET['page_no']) && $_GET['page_no'] !== ""){
     $stmt2->execute();
 
     $orders = $stmt2->get_result();
-
-  
-    include('includes/navbar.php');
     
 ?>
 
@@ -93,17 +84,15 @@ if(isset($_GET['page_no']) && $_GET['page_no'] !== ""){
                                     <td><?php echo $order['user_phone'];    ?></td>    
                                     <td><?php echo $order['user_address'];    ?></td>    
                                     <td>
-                                    <form action="order_pending.php" method="GET">
+                                    <form action="?page=order_pending" method="GET">
                                     <input type="hidden" name="order_id" value="<?php echo  $order['order_id']; ?>">
                                     <input type="hidden" name="user_name" value="<?php echo  $order['user_name']; ?>">
                                     <input type="hidden" name="user_email" value="<?php echo  $order['user_email']; ?>">
                                 
                                     <a class="btn-warning btn" type="submit" name="cancel_order" href="<?php echo "?order_id=".$order['order_id']."&cancel=1"; ?>" >Hủy</a>
-                                    <a class="btn-primary btn mt-2" type="submit" name="update_order_status" href="<?php echo "?order_id=".$order['order_id']."&update_order_status=1"; ?>" >Duyệt</a>
+                                    <a class="btn-primary btn mt-2" type="submit" name="update_order_status" href="<?php echo "?page=order_pending&order_id=".$order['order_id']."&update_order_status=1"; ?>" >Duyệt</a>
                                     <button class="btn-success btn mt-2 btn-order-detail" data-order-id="<?php echo  $order['order_id']; ?>" >Chi tiết</button>
-                                        <!-- <a href="<?php //echo "order_pending.php?order_id=".$order['order_id']; ?>" class="btn btn-warning">Hủy</a>
-                                        <a href="<?php //echo "order_edit.php?order_id=".$order['order_id']; ?>" class="btn btn-primary">Duyệt</a>
-                                        <button class="btn btn-primary">Chi tiết</button> -->
+                                      
                                     </form>
                                     </td>    
                                     <!-- <td></td>     -->
@@ -171,7 +160,7 @@ if(isset($_GET['page_no']) && $_GET['page_no'] !== ""){
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-                <form action="delete_product.php" method="POST">
+                <form action="?page=delete_product" method="POST">
                     <button type="submit" class="btn btn-primary" name="OK" id="delete_product">Đồng ý</button>
                 </form>
             </div>
@@ -202,10 +191,7 @@ if(isset($_GET['page_no']) && $_GET['page_no'] !== ""){
 
 
         
-<?php
-include("includes/footer.php");
-?>
-<script src="js/order-detail.js?v<?php echo time();?>"></script>
+
 <?php
 if(isset($_GET['success'])){
     echo '<script>swal("Duyệt thành công", "", "success");</script>';

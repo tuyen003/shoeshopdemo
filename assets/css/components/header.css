@@ -56,8 +56,9 @@ nav {
   width: 100%;
 }
 
-.wishlist-icon {
-  margin-right: 9px;
+.wishlist-icon,
+.cart-icon {
+  margin-right: 15px;
 }
 
 #logo {
@@ -114,11 +115,13 @@ nav {
   box-shadow: inset;
 }
 
-.cart-icon {
+.cart-icon,
+.wishlist-icon {
   position: relative;
 }
 
-#product-number-cart {
+#product-number-cart,
+#product-number-wishlist {
   position: absolute;
   border-radius: 50%;
   background: #cd2909;

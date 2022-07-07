@@ -1,25 +1,27 @@
-$(".btn-order-detail").each(function () {
-  $(this).click(function (e) {
-    e.preventDefault();
-    $("#pop-up").addClass("active-popup-details");
-    var order_id = $(this).attr("data-order-id");
-    // $("#pop-up-form-container").html(setFormPopup(product_id, product_name));
+if ($(".btn-order-detail")) {
+  $(".btn-order-detail").each(function () {
+    $(this).click(function (e) {
+      e.preventDefault();
+      $("#pop-up").addClass("active-popup-details");
+      var order_id = $(this).attr("data-order-id");
+      // $("#pop-up-form-container").html(setFormPopup(product_id, product_name));
 
-    e.preventDefault();
-    $.ajax({
-      url: "components/order_detail_product.php",
-      method: "POST",
-      data: { order_id: order_id },
-      dataType: "json",
-      success: function (data) {
-        var content = getDataHtmlTable(data);
-        $("#pop-up-form-container").html(
-          setFormPopup("Chi tiết đơn hàng", content)
-        );
-      },
+      e.preventDefault();
+      $.ajax({
+        url: "components/order_detail_product.php",
+        method: "POST",
+        data: { order_id: order_id },
+        dataType: "json",
+        success: function (data) {
+          var content = getDataHtmlTable(data);
+          $("#pop-up-form-container").html(
+            setFormPopup("Chi tiết đơn hàng", content)
+          );
+        },
+      });
     });
   });
-});
+}
 
 function setFormPopup(title, content) {
   return `

@@ -1,13 +1,6 @@
 
 
 <?php
-session_start();
-include("includes/header.php");
-include("../server/connect.php");
-if(!isset($_SESSION['admin_logged_in'])){
-    header("location: login.php");
-    exit;
-}
 
 if(isset($_GET['page_no']) && $_GET['page_no'] !== ""){
     //when user entered page then page number is a number selected 
@@ -40,8 +33,7 @@ if(isset($_GET['page_no']) && $_GET['page_no'] !== ""){
 
     $users = $stmt2->get_result();
 
-  
-    include('includes/navbar.php');
+
     
 ?>
 
@@ -135,8 +127,3 @@ if(isset($_GET['page_no']) && $_GET['page_no'] !== ""){
 
 
 
-        
-<?php
-include("includes/footer.php");
-
-?>

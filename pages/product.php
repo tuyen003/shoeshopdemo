@@ -1,11 +1,11 @@
 <?php
-  include("layouts/header.php");
-  require("server/getProducts.php");
-  include("server/getReview.php");
-  include("server/getProductSize.php");
-  include("lib/lib.php");
-  header_title("Thông tin sản phẩm");
-  $product_single = array();
+ob_start();
+// require("server/getProducts.php");
+require("server/getReview.php");
+require("server/getProductSize.php");
+
+header_title("Thông tin sản phẩm");
+$product_single = array();
 
   
 
@@ -18,7 +18,7 @@
 
     // no product not found
   } else {
-      header("location: 404page.php");
+      // header("location: 404page.php");
   }
 
   // print_r(getSizeOfProduct($id)[0]);
@@ -27,11 +27,11 @@
   $productRelated = getRelateProducts();
 ?> 
  
- <section class="container single-product my-5 pt-5">
+ <section class="container single-product my-5">
    <?php foreach ($products as $row) { 
           $product_single['detail']  = $row['product_description_detail'];
      ?>
-        <div class="row mt-5">
+        <div class="row">
             <div class="col-lg-5 col-md-6 col-sm-12 xzoom-container">
 
                 <img src="assets/images/products/<?php echo $row['product_image']; ?>" alt="shoes" xoriginal="assets/images/products/<?php echo $row['product_image']; ?>" class="xzoom img-fluid w-100 pb-1" id="main-img">
@@ -62,13 +62,38 @@
                 <!-- <h6 class="path">Men/Shoes</h6> -->
                 <h3 class="pt-4 product-name"><?php echo $row['product_name']; ?></h3>
                 <p class="product-rating">đánh giá: </p>
-                <h2 class="price"><span></span> <?php echo $row['product_price']; ?> đ</h2>
+                <div class="price-container">
+                  <h2 class="price"> <?php echo $row['product_price']; ?></h2>
+                  <span>đ</span>
+                </div>
                 <h5>tình trạng: <span class="available">còn hàng</span></h5>
                 <h5>Số lượng: <span class="available" id="product_quantity_remain"><?php echo getQuantityProduct($row['product_id']);?></span></h5>
                 <h5>danh mục: <span class="categories"><?php echo $row['product_category']; ?></span></h5>
                 <h5 class="mb-55">Màu sắc: <span class="tags"><?php echo $row['product_color']; ?></span></h5>
               
-                <form action="cart" method="post"  >
+                <script>
+                  var price = document.querySelector('.price');
+                  var temp = price.innerText;
+                  var priceFormat = [];
+                  // console.log(price.innerText);
+                  var dem = 0;
+                  for (let i = temp.length - 1; i >= 0; i--) {
+                    if(dem %3 == 0 && dem != 0 && temp[i-1])
+                    {
+                      priceFormat.push('.');
+                      priceFormat.push(temp[i]);
+                    }
+                    else  priceFormat.push(temp[i]);
+                    console.log(i,dem);
+                    dem ++;
+                  }
+                  
+                  price.innerText = priceFormat.reverse().join('');
+
+
+                </script>
+
+                <form action="?page=cart" method="post"  >
                     <input type="hidden" name="product_id" value="<?php echo $row['product_id'];?>" >
                     <?php $id = $row['product_id'];?>
                     <input type="hidden" name="product_image" value="<?php echo $row['product_image'];?>" >
@@ -198,42 +223,41 @@
         <hr>
 
         <div class="row ">
-        <?php foreach ($productRelated as $row) {
+        <?php foreach ($productRelated as $product) {
          ?>
           <div class="col-lg-3 col-md-3 col-sm-6">
-            <a class="product mb-4" href="<?php echo "single_product.php?product_id={$row['product_id']}"; ?>">
+            <div class="product mb-4">
               <div class="tag-new">new</div>
               <!-- <div class="tag-sale">-5 <span>%</span></div> -->
-              <?php if($row['product_special_offer'] != 0) {
-                    echo "<div class='tag-sale'>-{$row['product_special_offer']}<span>%</span></div>";
+              <?php if($product['product_special_offer'] != 0) {
+                    echo "<div class='tag-sale'>-{$product['product_special_offer']}<span>%</span></div>";
                   }?>
               <div class="product-icon">
-              <span class="like-btn" data-product-id="<?php echo $product['product_id']; ?>"><i class="fa-solid fa-heart" ></i></span>
-                
+                <span class="like-btn" data-product-id="<?php echo $product['product_id']; ?>"><i class="fa-solid fa-heart" ></i></span>
               </div>
               <div class="product-img-container">
                 <img
-                  src="assets/images/products/<?php echo $row["product_image"]; ?>"
+                  src="assets/images/products/<?php echo $product["product_image"]; ?>"
                   alt=""
                   class="w-100 product-img"
-                  data-img="assets/images/products/<?php echo $row["product_image2"]; ?>"
+                  data-img="assets/images/products/<?php echo $product["product_image2"]; ?>"
                 />
               </div>
-              <div class="d-flex justify-content-between pt-4">
-                <div class="product-name"><?php echo $row["product_name"]; ?></div>
+              <a class="d-flex justify-content-between pt-4" href="<?php echo "?page=product&product_id={$product['product_id']}"; ?>">
+                <div class="product-name"><?php echo $product["product_name"]; ?></div>
               
-              </div>
+              </a>
               <div class="price-container">
-              <?php if($row['product_special_offer'] != 0){
-                      $price = round($row["product_price"] - ($row['product_special_offer']*$row["product_price"]/100),-3);
+              <?php if($product['product_special_offer'] != 0){
+                      $price = round($product["product_price"] - ($row['product_special_offer']*$product["product_price"]/100),-3);
                       echo '<span class="product-price-new">'.$price.' đ</span>';
-                      echo '<span class="product-price">'.$row['product_price'].'đ</span>';
+                      echo '<span class="product-price">'.$product['product_price'].'đ</span>';
                     } else {
-                      echo '<span class="product-price-new">'.$row["product_price"].' đ</span>';
+                      echo '<span class="product-price-new">'.$product["product_price"].' đ</span>';
                     }
                     ?>
               </div>
-            </a>
+            </div>
           </div>
             <?php }; ?>
         </div>
@@ -245,22 +269,3 @@
 
 
 
-
-
-
-<?php 
-
-    include("layouts/footer.php");
- ?>
-<script src="assets/js/review.js?v<?php echo time();?>"></script>
-
-
-<script>
-  $(function(){
-    $(".xzoom,.xzoom-gallery").xzoom({
-      zoomWidth: 350,
-      tint: "#333",
-      Xoffset:15,
-    })
-  })
-</script>

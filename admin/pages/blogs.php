@@ -1,15 +1,8 @@
 
 
 <?php
-session_start();
-include("includes/header.php");
-include("../server/connect.php");
-require('lib/lib.php');
-if(!isset($_SESSION['admin_logged_in'])){
-    header("location: login.php");
-    exit;
-}
-// $product_single = 1;
+
+$blog_single = 1;
 if(isset($_GET['page_no']) && $_GET['page_no'] !== ""){
     //when user entered page then page number is a number selected 
     $page_no = $_GET['page_no'];
@@ -19,14 +12,14 @@ if(isset($_GET['page_no']) && $_GET['page_no'] !== ""){
     $page_no = 1;
   }
   //  else {
-    //return number of products
-    $stmt1 = $conn->prepare("SELECT COUNT(*) AS total_records FROM orders");
+    //return number of blogs
+    $stmt1 = $conn->prepare("SELECT COUNT(*) AS total_records FROM blogs");
     $stmt1 ->execute();
     $stmt1->bind_result($total_records);
     $stmt1->store_result();
     $stmt1->fetch();
 
-    //Product per page
+    //blog per page
     $total_records_per_page = 10;
     $offset = ($page_no - 1) * $total_records_per_page;
     $previous_page = $page_no -1;
@@ -35,15 +28,13 @@ if(isset($_GET['page_no']) && $_GET['page_no'] !== ""){
     // $adjacents = "2";
     $total_no_of_pages = ceil($total_records/$total_records_per_page);
 
-    // get all product
-    $stmt2 = $conn->prepare("SELECT * FROM orders LIMIT $offset,$total_records_per_page");
+    // get all blog
+    $stmt2 = $conn->prepare("SELECT * FROM blogs LIMIT $offset,$total_records_per_page");
     $stmt2->execute();
 
-    $orders = $stmt2->get_result();
+    $blogs = $stmt2->get_result();
 
-    // print_r($_SESSION);
-    include('includes/navbar.php');
-    
+
 ?>
 
 
@@ -56,7 +47,7 @@ if(isset($_GET['page_no']) && $_GET['page_no'] !== ""){
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                           Tất cả đơn hàng
+                           Tất cả bài viết
                         </h1>
                     </div>
                 </div>
@@ -64,44 +55,40 @@ if(isset($_GET['page_no']) && $_GET['page_no'] !== ""){
             </div>
             <!-- /.container-fluid -->
             <div class="container-fluid">
-
-                <div class="order-filter-container">
-                    <select name="order_status" id="order_filter" class="form-control">
-                        <option value="all">Tất cả đơn hàng</option>
-                        <option value="on_hold">Đang chờ duyệt</option>
-                        <option value="on_shipping">Đang giao hàng</option>
-                        <option value="success">Thành công</option>
-                        <option value="cancel">Đơn hàng hủy</option>
-                    </select>
-                </div>
+            
 
                 <div class="table-responsive">
-                    
+             
                     <table class="table table-striped table-sm">
                         <thead>
                             <tr>
                                 <th scope="col" >Mã</th>
-                                <th scope="col" >Trạng thái</th>
-                                <th scope="col" >Mã người dùng</th>
-                                <th scope="col" >Ngày đặt</th>
-                                <th scope="col" >Số điện thoại</th>
-                                <th scope="col" >Địa chỉ</th>
+                                <th scope="col" >Ảnh</th>
+                                <th scope="col" >Tên</th>
+                                <th scope="col" >Miêu tả ngắn</th>
+                                <th scope="col" >Ngày</th>
+                                <th scope="col" >Chỉnh sửa</th>
                                 <th scope="col" >Xóa</th>
-                                <!-- <th scope="col" >Chỉnh sửa</th> -->
                             </tr>
                         </thead>
-                        <tbody id="table-order-body">
-                            <?php foreach($orders as $order){ ?>
+                        <tbody>
+                            <?php foreach($blogs as $blog){ ?>
                                 <tr>
-                                    <td><?php echo $order['order_id'];    ?></td>    
-                                    <td><?php echo statusOrder($order['order_status']);    ?></td>    
-                                    <td><?php echo $order['user_id'];    ?></td>    
-                                    <td><?php echo $order['order_date'];    ?></td>    
-                                    <td><?php echo $order['user_phone'];    ?></td>    
-                                    <td><?php echo $order['user_address'];    ?></td>    
-                                    <td><a href="<?php //echo "order.php?product_id=".$order['order_id']; ?>" class="btn btn-warning">Delete</a></td>    
-                                    <!-- <td><a href="<?php //echo "edit_product.php?product_id=".$order['order_id']; ?>" class="btn btn-primary">Edit</a></td>     -->
-                                  
+                                    <td><?php echo $blog['blog_id'];    ?></td>    
+                                    <td><img src="<?php echo "../assets/images/blogs/".$blog['blog_image'];    ?>" alt="blog image" style="width:120px; height:70px;object-fit: cover;"></td>    
+                                    <td><?php echo $blog['blog_title'];    ?></td>        
+                                    <td><?php echo $blog['blog_description_short'];    ?></td>        
+                                    <td><?php echo $blog['blog_date'];    ?></td>        
+                                    <td><a href="#"class="btn btn-primary" data-id-blog="<?php echo $blog['blog_id']; ?>">Edit</a></td>    
+                                 
+                                    <td>
+                                        <form action="?page=all_blogs" method="post">
+                                            <input type="hidden" name="id" value="<?php echo $blog['blog_id']; ?>">
+                                            <button type="submit" class="btn btn-danger delete_btn" name="delete" data-id="<?php echo $blog['blog_id']; ?>" data-toggle="modal" data-target="#modalDelete">
+                                                Delete
+                                            </button>
+                                        </form>
+                                    </td>
                                 </tr>
                             <?php } ?>
                         </tbody>
@@ -161,12 +148,12 @@ if(isset($_GET['page_no']) && $_GET['page_no'] !== ""){
                 </button>
             </div>
             <div class="modal-body">
-                <p>Bạn có chắc chắn muốn xóa sản phẩm này không?</p>
+                <p>Bạn có chắc chắn muốn xóa bài viết này không?</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-                <form action="delete_product.php" method="POST">
-                    <button type="submit" class="btn btn-primary" name="OK" id="delete_product">Đồng ý</button>
+                <form action="?page=delete_blog" method="POST">
+                    <button type="submit" class="btn btn-primary" name="OK" id="delete_blog">Đồng ý</button>
                 </form>
             </div>
         </div>
@@ -174,12 +161,6 @@ if(isset($_GET['page_no']) && $_GET['page_no'] !== ""){
     </div>
 
 
-
-        
-<?php
-include("includes/footer.php");
-
-?>
 
 <?php
 if(isset($_GET['update_success'])){

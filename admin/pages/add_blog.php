@@ -1,11 +1,4 @@
 <?php
-session_start();
-include("includes/header.php");
-require("../server/connect.php");
-if(!isset($_SESSION['admin_logged_in'])){
-    header("location: login.php");
-    exit;
-}
 
 $blog = array();
 
@@ -31,11 +24,6 @@ if(isset($_POST['add_blog_btn'])){
 
   }
 ?>
-
-<?php 
-    include("includes/navbar.php");
-?>
-
 
         <div id="page-wrapper">
             <div class="container-fluid">
@@ -84,13 +72,6 @@ if(isset($_POST['add_blog_btn'])){
 
         </div>
         <!-- /#page-wrapper -->
-
-
-<?php
-include("includes/footer.php");
-
-?>
-
 
 <?php
     if(isset($_GET['success'])) {

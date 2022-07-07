@@ -1,7 +1,6 @@
 <?php
 
-//   session_start();
-    include("layouts/header.php");
+
     header_title("Đặt hàng");
 
 //   if( !empty($_SESSION['cart']) && isset($_POST['checkout'])){
@@ -37,6 +36,3 @@
 
 
 
-<?php
-  include("layouts/footer.php");
-?>

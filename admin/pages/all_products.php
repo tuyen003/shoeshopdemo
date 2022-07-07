@@ -1,12 +1,6 @@
 
 <?php
-session_start();
-include("includes/header.php");
-include("../server/connect.php");
-if(!isset($_SESSION['admin_logged_in'])){
-    header("location: login.php");
-    exit;
-}
+
 $product_single = 1;
 if(isset($_GET['page_no']) && $_GET['page_no'] !== ""){
     //when user entered page then page number is a number selected 
@@ -39,8 +33,7 @@ if(isset($_GET['page_no']) && $_GET['page_no'] !== ""){
 
     $products = $stmt2->get_result();
 
-  
-    include('includes/navbar.php');
+
     
 ?>
 
@@ -91,10 +84,10 @@ if(isset($_GET['page_no']) && $_GET['page_no'] !== ""){
                                     <td><?php echo $product['product_special_offer'];    ?></td>    
                                     <td><?php echo $product['product_color'];    ?></td>    
                                     <td><button class="update-image-btn btn-warning btn" data-img-id="<?php echo $product['product_id']; ?>" data-img-name="<?php echo $product['product_name']; ?>" class="btn btn-warning">Sửa ảnh</button></td>    
-                                    <td><a href="<?php echo "edit_product.php?product_id=".$product['product_id']; ?>" class="btn btn-primary">Chỉnh sửa</a></td>    
+                                    <td><a href="<?php echo "?page=edit_product&product_id=".$product['product_id']; ?>" class="btn btn-primary">Chỉnh sửa</a></td>    
                                     <!-- <td><a href="" class="btn btn-danger delete_links">Delete</a></td>     -->
                                     <td>
-                                        <form action="all_products.php" method="post">
+                                        <form action="?page=all_products" method="post">
                                             <input type="hidden" name="id" value="<?php echo $product['product_id']; ?>">
                                             <button type="submit" class="btn btn-danger delete_btn" name="delete" data-id="<?php echo $product['product_id']; ?>" data-toggle="modal" data-target="#modalDelete">
                                                 Delete
@@ -216,10 +209,6 @@ if(isset($_GET['page_no']) && $_GET['page_no'] !== ""){
 
 
         
-<?php
-include("includes/footer.php");
-
-?>
 
 <?php
 if(isset($_GET['update_success'])){

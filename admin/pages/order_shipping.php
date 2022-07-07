@@ -1,15 +1,6 @@
 
-
 <?php
-ob_start();
-session_start();
-include("includes/header.php");
-include("../server/connect.php");
-require("lib/lib.php");
-if(!isset($_SESSION['admin_logged_in'])){
-    header("location: login.php");
-    exit;
-}
+
 // $product_single = 1;
 if(isset($_GET['page_no']) && $_GET['page_no'] !== ""){
     //when user entered page then page number is a number selected 
@@ -42,8 +33,7 @@ if(isset($_GET['page_no']) && $_GET['page_no'] !== ""){
 
     $orders = $stmt2->get_result();
 
-  
-    include('includes/navbar.php');
+
     
 ?>
 
@@ -91,9 +81,9 @@ if(isset($_GET['page_no']) && $_GET['page_no'] !== ""){
                                     <td><?php echo $order['user_phone'];    ?></td>    
                                     <td><?php echo $order['user_address'];    ?></td>    
                                     <td>
-                                        <form action="order_shipping.php" method="get">
-                                            <a href="<?php echo "?act=cancel&order_id=".$order['order_id']; ?>" class="btn btn-warning" type="submit">Hủy</a>
-                                            <a href="<?php echo "?act=update&order_id=".$order['order_id']; ?>" class="btn btn-primary" type="submit">Cập nhật</a>
+                                        <form action="?page=order_shipping" method="get">
+                                            <a href="<?php echo "&act=cancel&order_id=".$order['order_id']; ?>" class="btn btn-warning" type="submit">Hủy</a>
+                                            <a href="<?php echo "&act=update&order_id=".$order['order_id']; ?>" class="btn btn-primary" type="submit">Cập nhật</a>
                                         </form>
                                     </td>    
                                 
@@ -146,10 +136,6 @@ if(isset($_GET['page_no']) && $_GET['page_no'] !== ""){
         </div>
         <!-- /#page-wrapper -->
 
-        
-<?php
-    include("includes/footer.php");
-?>
 
 <?php
 if(isset($_GET['success'])){
@@ -176,10 +162,10 @@ if(isset($_GET['act'])){
         $stmt ->bind_param('si',$order_status,$order_id);
 
         if($stmt->execute()) {
-            header('location: order_shipping.php?success=order update status successfully');
+            header('location: ?page=order_shipping&success=order update status successfully');
                 
         } else {
-            header('location: order_shipping.php?error=order update status error');
+            header('location: ?page=order_shipping?error=order update status error');
             exit;
         }
     }
@@ -191,10 +177,10 @@ if(isset($_GET['act'])){
         $stmt ->bind_param('si',$order_status,$order_id);
         
         if($stmt->execute()) {
-            header('location: order_shipping.php?cancel_success=order cancel');
+            header('location: ?page=order_shipping&cancel_success=order cancel');
             // exit;
         } else {
-            header('location: order_shipping.php?error=order error');
+            header('location: ?page=order_shipping&error=order error');
             exit;
         }
         

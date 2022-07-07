@@ -1,5 +1,4 @@
 <?php
-  include("layouts/header.php");
   require("server/getBlogs.php");
   header_title("Bài viết");
 
@@ -38,6 +37,3 @@
 </section>
 
 
-<?php
-  include("layouts/footer.php");
-?>

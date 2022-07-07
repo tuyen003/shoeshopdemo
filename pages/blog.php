@@ -1,7 +1,6 @@
 <?php
 ob_start();
-  include("layouts/header.php");
-  require("server/connect.php");
+
   header_title("Thông tin sản phẩm");
 //   $blog = array();
 
@@ -40,9 +39,3 @@ ob_start();
 </section>
         
   
-
-<?php 
-
-    include("layouts/footer.php");
- ?>
-

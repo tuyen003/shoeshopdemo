@@ -130,8 +130,6 @@ function getDataHtml(data) {
           }">- ${data[i].product_special_offer} <span>%</span></div>
           <div class="product-icon">
             <span><i class="fa-solid fa-heart"></i></span>
-            <span><i class="fa-solid fa-cart-shopping"></i></span>
-            <span><i class="fa-solid fa-magnifying-glass"></i></span>
           </div>
           <div class="product-img-container">
             <img
@@ -140,7 +138,7 @@ function getDataHtml(data) {
               class="w-100 product-img"
             />
           </div>
-          <a class="d-flex justify-content-between pt-4" href="single_product.php?product_id=${
+          <a class="d-flex justify-content-between pt-4" href="?page=product&product_id=${
             data[i].product_id
           }">
             <div class="product-name">${data[i].product_name}</div>

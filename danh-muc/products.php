@@ -75,8 +75,8 @@
               
                   <div class="product-icon">
                     <span class="like-btn" data-product-id="<?php echo $product['product_id']; ?>"><i class="fa-solid fa-heart"></i></span>
-                    <span><i class="fa-solid fa-cart-shopping"></i></span>
-                    <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <!-- <span><i class="fa-solid fa-cart-shopping"></i></span> -->
+                    <!-- <span><i class="fa-solid fa-magnifying-glass"></i></span> -->
                   </div>
                   <div class="product-img-container">
                     <img
@@ -85,15 +85,15 @@
                       class="w-100 product-img"
                     />
                   </div>
-                  <a class="d-flex justify-content-between pt-4" href="<?php echo "single_product.php?product_id=".$product['product_id']; ?>" >
+                  <a class="d-flex justify-content-between pt-4" href="<?php echo "?page=product&product_id=".$product['product_id']; ?>" >
                     <h4 class="product-name"><?php echo $product['product_name']; ?></h4>
-                    <div class="product-rate">
+                    <!-- <div class="product-rate">
                       <i class="fa-solid fa-star"></i>
                       <i class="fa-regular fa-star"></i>
                       <i class="fa-regular fa-star"></i>
                       <i class="fa-regular fa-star"></i>
                       <i class="fa-regular fa-star"></i>
-                    </div>
+                    </div> -->
                   </a>
                   <div class="price-container">
                   <?php if($product['product_special_offer'] != 0){

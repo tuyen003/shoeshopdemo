@@ -1,6 +1,5 @@
 
 <?php
-  include("layouts/header.php");
   header_title("Liên hệ");
 ?> 
  
@@ -21,11 +20,6 @@
       </div>
     </section>
 
-
-
-<?php
-  include("layouts/footer.php");
-?>
 
 
 

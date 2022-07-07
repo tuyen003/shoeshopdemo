@@ -1,8 +1,6 @@
 <?php
     ob_start();
     // session_start();
-    include("layouts/header.php");
-    require("server/connect.php");
     header_title("Đăng ký tài khoản");
     $error = array();
     
@@ -76,7 +74,7 @@
             <hr class="mx-auto">
         </div>
         <div class="mx-auto container">
-            <form action="register.php" method="POST" id="register-form">
+            <form action="?page=register" method="POST" id="register-form">
                 <p > <?php if(isset($_GET['error'])) echo $_GET['error']; ?></p>
                 <div class="form-group">
                     <label for="firstname">Tên</label>
@@ -102,7 +100,7 @@
                     <input type="submit" value="Đăng ký" class="btn" name="register" id="register-btn" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <a href="login.php" id="login-url" class="btn" >Bạn đã có tài khoản chưa? Đăng nhập</a>
+                    <a href="?page=login" id="login-url" class="btn" >Bạn đã có tài khoản chưa? Đăng nhập</a>
                 </div>
 
             </form>
@@ -111,8 +109,3 @@
 
     
 
-
-
- <?php 
-    include("layouts/footer.php");
- ?>

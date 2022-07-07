@@ -1,4 +1,4 @@
 RewriteEngine On
-RewriteRule ^(index|shop|contact|cart|login|register|blogs|account|checkout|wishlist)$ $1.php [NC,L]
-RewriteRule ^product/(\d+)$ single_product.php?product_id=$1 [NC,L]
-RewriteRule ^admin/(index|login|orders|register|customers)$ admin/$1.php [NC,L]
+RewriteRule ^(index|shop|contact|cart|login|register|blogs|account|checkout|wishlist)$ ?page=$1 [NC,L]
+RewriteRule ^product/product_id=(\d+)$ ?page=product&product_id=$1 [NC,L]
+RewriteRule ^admin/(all_products)$ ?page=$1 [NC,L]

@@ -36,7 +36,7 @@ function getDataHtml(data) {
   for (var i = 0; i < data.length; i++) {
     text += `
         <div class="col-lg-3 col-md-4 col-sm-6">
-        <a class="product mb-4" href="single_product.php?product_id=${
+        <a class="product mb-4" href="?page=product&product_id=${
           data[i].product_id
         }" >
           <div class="tag-new">new</div>

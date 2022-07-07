@@ -1,11 +1,4 @@
 <?php
-session_start();
-include("includes/header.php");
-require("../server/connect.php");
-if(!isset($_SESSION['admin_logged_in'])){
-    header("location: login.php");
-    exit;
-}
 
 if(isset($_GET["product_id"])){
     $product_id = $_GET['product_id'];
@@ -14,9 +7,6 @@ if(isset($_GET["product_id"])){
 
 ?>
 
-<?php 
-    include("includes/navbar.php");
-?>
 
 
             <div class="container-fluid">
@@ -62,9 +52,3 @@ if(isset($_GET["product_id"])){
                 </div>
             </div>
 
-
-
-<?php
-include("includes/footer.php");
-
-?>

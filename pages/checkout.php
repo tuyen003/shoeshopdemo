@@ -1,9 +1,9 @@
 <?php
 ob_start();
 //   session_start();
- include("layouts/header.php");
+
  header_title("Đặt hàng");
- include("lib/lib.php");
+
 
 
  $ship_money = 23000;
@@ -151,11 +151,6 @@ ob_start();
     </section>
 
 
-
-
-<?php
-  include("layouts/footer.php");
-?>
 
 
 <script src='assets/js/lib/districts.min.js?v<?php echo time();?>'> </script>

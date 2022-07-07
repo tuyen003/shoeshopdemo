@@ -84,31 +84,6 @@ if(isset($_POST['login_btn'])) {
 
             </div>
 
-
-            <!-- <div class="p-5">
-              <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-4">Quên Mật khẩu</h1>
-         
-              </div>
-
-                <form class="user" action="login.php" method="POST">
-
-                    <div class="form-group">
-                    <input type="email" name="email" class="form-control form-control-user" placeholder="Enter Email Address...">
-                    </div>
-                    <div class="form-group">
-                    <input type="password" name="password" class="form-control form-control-user" placeholder="mật khẩu">
-                    </div>
-                    <div class="form-group">
-                    <input type="password" name="password_confirm" class="form-control form-control-user" placeholder="nhập lại mật khẩu">
-                    </div>
-            
-                    <button type="submit" name="reset_password_btn" class="btn btn-login btn-user btn-block"> Đổi mật khẩu</button>
-                    <hr>
-                </form>
-
-
-            </div> -->
           </div>
         </div>
       </div>

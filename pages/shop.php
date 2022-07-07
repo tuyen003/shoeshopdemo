@@ -1,7 +1,6 @@
 
 <?php
-  include("layouts/header.php");
-  include("server/connect.php");
+
   header_title("Sản phẩm");
   
   if(isset($_GET['search'])) {
@@ -157,7 +156,7 @@
                       class="w-100 product-img"
                     />
                   </div>
-                  <a class="d-flex justify-content-between pt-4" href="<?php echo "single_product.php?product_id=".$row['product_id']; ?>" >
+                  <a class="d-flex justify-content-between pt-4" href="<?php echo "?page=product&product_id=".$row['product_id']; ?>" >
                     <h4 class="product-name"><?php echo $row['product_name']; ?></h4>
                   
                   </a>
@@ -227,10 +226,6 @@
 
 
 
-
-<?php 
-    include("layouts/footer.php");
- ?>
 
 
 <script src="assets/js/filter_product.js?v<?php echo time();?>"></script>

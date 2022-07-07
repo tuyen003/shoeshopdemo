@@ -1,11 +1,14 @@
-<?php $page_url = substr($_SERVER['SCRIPT_NAME'],strrpos($_SERVER['SCRIPT_NAME'],"/")+1);
-  // echo $page_url;
+<?php //$_GET['page'] = substr($_SERVER['SCRIPT_NAME'],strrpos($_SERVER['SCRIPT_NAME'],"=")+1);
+  // echo $_GET['page'];
+  if(isset($_GET['page'])) {
+    $page_active = $_GET['page'];
+  } else $page_active = "";
 ?>
 <!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
 <!-- Sidebar - Brand -->
-<a class="sidebar-brand" href="index.php"  style="text-align:left;">
+<a class="sidebar-brand" href="?page=home"  style="text-align:left;">
   <div class="sidebar-brand-text">Shoe shop</div>
 </a>
 
@@ -13,8 +16,8 @@
 <hr class="sidebar-divider my-0">
 
 <!-- Nav Item - Dashboard -->
-<li class="nav-item <?php if($page_url == 'index.php') echo 'active'; ?>">
-  <a class="nav-link" href="index.php">
+<li class="nav-item <?php if($page_active == '') echo 'active'; ?>">
+  <a class="nav-link" href="?page=home">
     <i class="fas fa-fw fa-tachometer-alt"></i>
     <span>Thống kê</span></a>
 </li>
@@ -28,17 +31,17 @@
 </div>
 
 <!-- Nav Item - Pages Collapse Menu -->
-<li class="nav-item <?php if($page_url == 'orders.php' || $page_url == 'order_pending.php'||$page_url == 'order_shipping.php') echo 'active'; ?>">
+<li class="nav-item <?php if($page_active == 'orders' || $page_active == 'order_pending'|| $page_active == 'order_shipping') echo 'active'; ?>">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDashboard" aria-expanded="true" aria-controls="collapseDashboard">
   <i class="fas fa-file-invoice-dollar"></i>
     <span>Danh sách đơn hàng</span>
   </a>
-  <div id="collapseDashboard" class="collapse  <?php if($page_url == 'orders.php' ||$page_url == 'order_pending.php'||$page_url == 'order_shipping.php') echo 'show'; ?>" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+  <div id="collapseDashboard" class="collapse  <?php if($page_active == 'orders' ||$page_active == 'order_pending'||$page_active == 'order_shipping') echo 'show'; ?>" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
       <!-- <h6 class="collapse-header">Custom Components:</h6> -->
-      <a class="collapse-item <?php if($page_url == 'order_pending.php') echo 'active'; ?>" href="order_pending.php">Đơn hàng đang chờ duyệt</a>
-      <a class="collapse-item <?php if($page_url == 'order_shipping.php') echo 'active'; ?>" href="order_shipping.php">Đơn hàng đang giao</a>
-      <a class="collapse-item <?php if($page_url == 'orders.php') echo 'active'; ?>" href="orders.php">Đơn hàng thành công</a>
+      <a class="collapse-item <?php if($page_active == 'order_pending') echo 'active'; ?>" href="?page=order_pending">Đơn hàng đang chờ duyệt</a>
+      <a class="collapse-item <?php if($page_active == 'order_shipping') echo 'active'; ?>" href="?page=order_shipping">Đơn hàng đang giao</a>
+      <a class="collapse-item <?php if($page_active == 'orders') echo 'active'; ?>" href="?page=orders">Đơn hàng thành công</a>
     </div>
   </div>
 </li>
@@ -46,8 +49,8 @@
 
 
 
-<li class="nav-item <?php if($page_url == 'customers.php') echo 'active'; ?>">
-  <a class="nav-link" href="customers.php">
+<li class="nav-item <?php if($page_active == 'customers') echo 'active'; ?>">
+  <a class="nav-link" href="?page=customers">
   <i class="fas fa-user"></i>
     <span>Danh sách người dùng</span></a>
 </li>
@@ -61,32 +64,32 @@
 </div>
 
 <!-- Nav Item -  PRODUCTS -->
-<li class="nav-item <?php if($page_url == 'all_products.php' ||$page_url == 'add_product.php') echo 'active'; ?>">
+<li class="nav-item <?php if($page_active == 'all_products' ||$page_active == 'add_product') echo 'active'; ?>">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProducts" aria-expanded="true" aria-controls="collapseProducts">
   <i class="fas fa-boxes"></i>
     <span>Sản phẩm</span>
   </a>
-  <div id="collapseProducts" class="collapse <?php if($page_url == 'all_products.php' ||$page_url == 'add_product.php') echo 'show'; ?>" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+  <div id="collapseProducts" class="collapse <?php if($page_active == 'all_products' ||$page_active == 'add_product') echo 'show'; ?>" aria-labelledby="headingPages" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
 
-      <a class="collapse-item <?php if($page_url == 'all_products.php') echo 'active'; ?>" href="all_products.php">Tất cả sản phẩm</a>
-      <a class="collapse-item <?php if($page_url == 'add_product.php') echo 'active'; ?>" href="add_product.php">Thêm sản phẩm</a>
+      <a class="collapse-item <?php if($page_active == 'all_products') echo 'active'; ?>" href="?page=all_products">Tất cả sản phẩm</a>
+      <a class="collapse-item <?php if($page_active == 'add_product') echo 'active'; ?>" href="?page=add_product">Thêm sản phẩm</a>
    
     </div>
   </div>
 </li>
 
 <!-- Nav Item -  Blogs Bài viết -->
-<li class="nav-item <?php if($page_url == 'blogs.php' ||$page_url == 'add_blog.php') echo 'active'; ?>">
+<li class="nav-item <?php if($page_active == 'blogs' ||$page_active == 'add_blog') echo 'active'; ?>">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBlogs" aria-expanded="true" aria-controls="collapseBlogs">
   <i class="fab fa-blogger"></i>
     <span>Bài viết( Blogs)</span>
   </a>
-  <div id="collapseBlogs" class="collapse <?php if($page_url == 'blogs.php' ||$page_url == 'add_blog.php') echo 'show'; ?>" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+  <div id="collapseBlogs" class="collapse <?php if($page_active == 'blogs' ||$page_active == 'add_blog') echo 'show'; ?>" aria-labelledby="headingPages" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
 
-      <a class="collapse-item <?php if($page_url == 'blogs.php') echo 'active'; ?>" href="blogs.php">Tất cả bài viết</a>
-      <a class="collapse-item <?php if($page_url == 'add_blog.php') echo 'active'; ?>" href="add_blog.php">Thêm bài viết</a>
+      <a class="collapse-item <?php if($page_active == 'blogs') echo 'active'; ?>" href="?page=blogs">Tất cả bài viết</a>
+      <a class="collapse-item <?php if($page_active == 'add_blog') echo 'active'; ?>" href="?page=add_blog">Thêm bài viết</a>
    
     </div>
   </div>
@@ -120,18 +123,6 @@
             <i class="fa fa-bars"></i>
           </button>
 
-          <!-- Topbar Search -->
-          <!-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form> -->
-
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -156,58 +147,7 @@
               </div>
             </li>
 
-            <!-- Nav Item - Alerts -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-bell fa-fw"></i>
-                <!-- Counter - Alerts -->
-                <span class="badge badge-danger badge-counter">3+</span>
-              </a>
-              <!-- Dropdown - Alerts -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                <h6 class="dropdown-header">
-                  Alerts Center
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-primary">
-                      <i class="fas fa-file-alt text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 12, 2019</div>
-                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-              </div>
-            </li>
-
-            <!-- Nav Item - Messages -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-envelope fa-fw"></i>
-                <!-- Counter - Messages -->
-                <span class="badge badge-danger badge-counter">7</span>
-              </a>
-              <!-- Dropdown - Messages -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
-                <h6 class="dropdown-header">
-                  Message Center
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
-                    <div class="status-indicator bg-success"></div>
-                  </div>
-                  <div class="font-weight-bold">
-                    <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
-                    <div class="small text-gray-500">Emily Fowler · 58m</div>
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
-              </div>
-            </li>
+        
 
             <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -265,7 +205,7 @@
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Hủy</button>
 
-          <form action="logout.php" method="POST"> 
+          <form action="logout" method="POST"> 
           
             <button type="submit" name="logout_btn" class="btn btn-primary">Đăng xuất</button>
 

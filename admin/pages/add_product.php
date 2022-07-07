@@ -1,11 +1,4 @@
 <?php
-session_start();
-include("includes/header.php");
-require("../server/connect.php");
-if(!isset($_SESSION['admin_logged_in'])){
-    header("location: login.php");
-    exit;
-}
 
 $product = array();
 
@@ -51,10 +44,6 @@ if(isset($_POST['create_btn'])){
     }
 
   }
-?>
-
-<?php 
-    include("includes/navbar.php");
 ?>
 
 
@@ -139,11 +128,6 @@ if(isset($_POST['create_btn'])){
         </div>
         <!-- /#page-wrapper -->
 
-
-<?php
-include("includes/footer.php");
-
-?>
 
 
 <?php

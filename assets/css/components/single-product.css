@@ -65,7 +65,7 @@
   color: var(--color-primary);
   font-size: 3rem;
   font-weight: 600;
-  letter-spacing: 2px;
+  /* letter-spacing: 2px; */
   text-transform: capitalize;
   opacity: 0.8;
 }
@@ -81,9 +81,9 @@
   font-weight: 700;
   color: var(--color-primary);
   display: inline-block;
-  background: #e85b401c;
-  padding: 1rem 2rem;
-  border-radius: 2rem;
+  /* background: #e85b401c; */
+  /* padding: 1rem 2rem; */
+  /* border-radius: 2rem; */
   margin: 1.5rem 0;
 }
 .price span {
