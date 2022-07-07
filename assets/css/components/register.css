@@ -1,6 +1,7 @@
 #register-form input {
   width: 50%;
   margin: 5px auto;
+  font-size: 1.4rem;
   border-radius: 10rem;
   padding: 1.5rem 2rem;
 }

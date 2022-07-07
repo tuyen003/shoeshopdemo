@@ -36,7 +36,7 @@ include("layouts/slideshow.php"); ?>
                   class="shop__now__action"
                   onclick="window.location.href='product-detail.html'"
                 >
-                  <a href="shop.php" class="shop__now__btn"
+                  <a href="?page=shop" class="shop__now__btn"
                     >shop now <i class="fa-solid fa-caret-right"></i
                   ></a>
                 </div>

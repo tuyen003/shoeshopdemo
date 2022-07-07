@@ -4,17 +4,17 @@
   <div class="swiper-wrapper">
     <!-- Slides -->
     <div class="swiper-slide">
-        <a href="shop.php">
+        <a href="?page=shop">
             <img src="assets/images/banner/banner-3.png" alt="">
         </a>
     </div>
     <div class="swiper-slide">
-        <a href="shop.php">
+        <a href="?page=shop">
             <img src="assets/images/banner/banner-2.png" alt="">
         </a>
     </div>
     <div class="swiper-slide">
-        <a href="shop.php">
+        <a href="?page=shop">
             <img src="assets/images/banner/banner-1.png" alt="">
         </a>
     </div>
