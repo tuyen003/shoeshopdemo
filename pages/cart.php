@@ -56,15 +56,6 @@
 
   } else if(isset($_POST['remove_product'])) {
     unset($_SESSION['cart'][$_POST['product_id']]);
-  }else if(isset($_POST['edit_quantity'])) {
-   
-      $product_id = $_POST['product_id'];
-      $product_array = $_SESSION['cart'][$product_id];
-
-      $product_array['product_quantity'] = $_POST['quantity'];
-
-      $_SESSION['cart'][$product_id] = $product_array;
-
   }
   
   if(isset($_SESSION['cart'])){
@@ -132,7 +123,7 @@
                 <button type="button" class="btn-minus-cart btn-cart btn-quantity" id="btn-minus">-</button>
                 <input type="number"  value="<?php echo $value['product_quantity']; ?>" min="1" name="quantity" class="quantity" id="quantity" >
                 <button type="button" class="btn-plus-cart btn-cart btn-quantity"  id="btn-plus">+</button>
-                <input class="btn edit-btn" value="edit" type="submit" name="edit_quantity">
+               
             </form>  
             </div>
           </td>

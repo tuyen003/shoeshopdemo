@@ -95,8 +95,14 @@ th:last-child {
   padding: 1rem 2rem;
   background-color: #fb774b;
   color: #fff;
+  border-radius: 1rem;
+  font-size: 1.7rem;
+  font-weight: 500;
 }
 
+.checkout-btn:hover {
+  background-color: #cc4113;
+}
 .product-container {
   display: flex;
   flex-direction: column;
@@ -130,5 +136,8 @@ th:last-child {
 .btn-plus-cart {
   background: #abec3b;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
+  tbody tr:first-child {
+    display: none;
+  }
 }

@@ -17,7 +17,7 @@ ob_start();
       }
      
   } else {
-      header("location: ?page=");
+      header("location: ?page=shop");
   }
 
   // echo "<pre>";

@@ -16,11 +16,10 @@
       </div>
 
       <div class="footer-one col-lg-3 col-md-6 col-sm-12">
-        <h5 class="pb-2">Featured</h5>
+        <h5 class="pb-2">Danh mục</h5>
         <ul class="text-uppercase">
-          <li><a href="#">men</a></li>
-          <li><a href="#">sports</a></li>
-          <li><a href="#">Women</a></li>
+          <li><a href="#">Nam</a></li>
+          <li><a href="#">Nữ</a></li>
         </ul>
       </div>
 
