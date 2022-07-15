@@ -94,12 +94,3 @@
   </div>
 
   <!-- Content Row -->
-
-  <div class="container-fluid">
-    <div class="chart-column chart-container">
-      <canvas id="myChartCol" width="400" height="400"></canvas>
-    </div>
-    <div class="chart-pie chart-container">
-      <canvas id="myChartPie" width="400" height="400"></canvas>
-    </div>
-  </div>

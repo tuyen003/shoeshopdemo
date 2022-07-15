@@ -108,19 +108,19 @@
                     </div>
 
                     <div class="form-group mt-4">
-                        <input type="submit" name="change_password_btn" value="Change Password" class="btn" id="change-password-btn">
+                        <input type="submit" name="change_password_btn" value="Đổi mật khẩu" class="btn" id="change-password-btn">
                     </div>
                 </form>
             </div>
         </div>
     </section>
 
-    <section id="orders" class="orders container my-5 py-5">
+    <section id="orders" class="orders container my-5">
         <div class="container mt-5">
           <h2 class="font-weight-bold text-center">Lịch sử mua hàng</h2>
           <hr class="mx-auto">
         </div>
-        <div class="container">
+        <div class="container d-flex justify-content-end">
           <select name="order_status" id="order_filter" class="form-control">
             <option value="on_hold">Đang chờ duyệt</option>
             <option value="on_shipping">Đang giao hàng</option>
@@ -128,7 +128,7 @@
             <option value="cancel">Đơn hàng hủy</option>
           </select>
         </div>
-        <table class="mt-5 pt-5">
+        <table class="mt-4">
           <tr>
             <th>Mã</th>
             <th style="text-align:left;">Tổng tiền</th>

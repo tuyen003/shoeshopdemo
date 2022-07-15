@@ -13,8 +13,8 @@ session_start();?>
       <link type="image/png" sizes="16x16" rel="icon" href="assets/favicon/icons8-shoe-16.png">
       <link type="image/png" sizes="96x96" rel="icon" href="assets/favicon/icons8-shoe-96.png">
 
-      <base href="https://php-shoeshop.herokuapp.com/">
-      <!-- <base href="http://localhost/shoeshop.vn/"> -->
+      <!-- <base href="https://php-shoeshop.herokuapp.com/"> -->
+      <base href="http://localhost/shoeshop.vn/">
 
   <?php 
   function header_title($title){
@@ -60,7 +60,7 @@ session_start();?>
  
 <header id="header" class="header">
 
-<nav class="navbar navbar-expand-lg bg-light py-3">
+<nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
           <div class="nav-left d-flex align-items-center">
             <a class="navbar-brand" href="">
@@ -72,20 +72,21 @@ session_start();?>
                 <a class="nav-link" href="">Trang chủ</a>
               </li>
               <li class="nav-item parent-menu" style="position: relative;">
-                <a class="nav-link" href="?page=shop" >Sản phẩm</a>
+                <!-- <a class="nav-link" href="?page=shop" >Sản phẩm</a> -->
+                <a class="nav-link" href="shop" >Sản phẩm</a>
                 <div class="sub-category-container">
                   <ul id="sub-category">
                   <li class="sub-category-item">
-                      <a href="danh-muc/products.php?cate[]=nam" class="sub-category-link">Giày Nam</a>
+                      <a href="products?cate=nam" class="sub-category-link">Giày Nam</a>
                     </li>
                     <li class="sub-category-item">
-                      <a href="danh-muc/products.php?cate[]=nữ" class="sub-category-link">Giày nữ</a>
+                      <a href="products?cate=nữ" class="sub-category-link">Giày nữ</a>
                     </li>
                     <li class="sub-category-item">
-                      <a href="danh-muc/products.php?cate[]=nữ&cate[]=sport" class="sub-category-link">Giày thể thao nữ</a>
+                      <a href="products?cate[]=nữ&cate[]=sport" class="sub-category-link">Giày thể thao nữ</a>
                     </li>
                     <li class="sub-category-item">
-                      <a href="danh-muc/products.php?cate[]=nam&cate[]=sport" class="sub-category-link">Giày thể thao nam</a>
+                      <a href="products?cate[]=nam&cate[]=sport" class="sub-category-link">Giày thể thao nam</a>
                     </li>
                   
                    
@@ -93,15 +94,24 @@ session_start();?>
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="?page=contact">Liên hệ</a>
+                <!-- <a class="nav-link" href="?page=contact">Liên hệ</a> -->
+                <a class="nav-link" href="contact">Liên hệ</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="?page=blogs">Blogs</a>
-              </li>
-              <li class="nav-item action-dropdown"  style="display:<?php echo isset($_SESSION['user_info'])?'none':'block';?>;" >
-                <a href="?page=login" class="nav-btn btn-login" >Đăng nhập</a>
-                <a href="?page=register" class="nav-btn btn-register">Đăng ký</a>
-              </li>
+                <!-- <a class="nav-link" href="?page=blogs">Blogs</a> -->
+                <a class="nav-link" href="blogs">Blogs</a>
+                </li>
+              <?php 
+                  if(!isset($_SESSION['user_info'])) {
+                    echo '
+                    <li class="nav-item action-dropdown">
+                      <a href="login" class="nav-btn btn-login" >Đăng nhập</a>
+                      <a href="register" class="nav-btn btn-register">Đăng ký</a>
+                    </li>
+                    ';
+                  }
+              ?>
+              
             </ul>
           </div>
          

@@ -1,5 +1,5 @@
 #contact {
-  height: 50vh;
+  height: 70vh;
 }
 #contact p {
   font-size: 1.8rem;
@@ -7,4 +7,14 @@
 }
 #contact span {
   color: #fb774b;
+}
+
+@media screen and (max-width: 768px) {
+  #contact span {
+    margin-top: 1rem;
+    display: block;
+  }
+  #contact .container > *:not(hr) {
+    width: 100% !important;
+  }
 }

@@ -33,4 +33,3 @@ include('includes/navbar.php');
 include('includes/footer.php');
 ?>
 
-<script src="js/chart.js?v<?php echo time();?>"></script>

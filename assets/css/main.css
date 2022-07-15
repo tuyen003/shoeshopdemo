@@ -654,7 +654,7 @@ iframe {
 
 @media screen and (max-width: 365px) {
   .navbar {
-    padding: 0 1rem;
+    padding-right: 1rem;
   }
   .navbar .container-fluid {
     padding: 0.5rem 0.5rem !important;

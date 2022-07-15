@@ -212,6 +212,22 @@
   display: block !important;
 }
 
+#orders h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #e85b40;
+}
+
+#orders select {
+  width: 30%;
+  font-size: 1.4rem;
+  border: 1px solid var(--color-secondary);
+  /* margin-bottom: 1rem; */
+  margin-top: 3rem;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+
 #close_popup i {
   font-size: 3rem;
   color: #ff3d18;
@@ -231,5 +247,21 @@
 @media screen and (max-width: 768px) {
   #account-form input {
     width: 95%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .account-info {
+    padding-top: 1.5rem;
+    padding-bottom: 4rem;
+  }
+}
+
+@media screen and (max-width: 578px) {
+  #account-form {
+    width: 95%;
+  }
+  #orders select {
+    width: 100%;
   }
 }
