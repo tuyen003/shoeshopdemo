@@ -8,7 +8,7 @@
     <div class="container">
     <div class="row">
       <div class="footer-one col-lg-3 col-md-6 col-sm-12">
-        <img src="assets/images/logo.png?v<?php echo time(); ?>" alt="logo" />
+        <img src="assets/images/logo.png?v<?php echo time(); ?>" alt="logo" style="width: 18rem;height: 10rem;object-fit: scale-down;"/>
         <p class="pt-3">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
           perferendis?
@@ -54,7 +54,7 @@
 
     <div class="copyright pt-2">
       <div class="row mx-auto d-flex justify-content-between align-items-center">
-        <div class="col-lg-3 col-md-5 col-sm-12 mb-4 text-nowrap text-center">
+        <div class="col-lg-3 col-md-5 col-sm-12 mb-4 text-nowrap">
           <p>ShoesShop @<span id="year">2025</span> All right reserved</p>
         </div>
         <div class="d-flex col-lg-3 col-md-5 col-sm-12 mb-4 text-nowrap icon-list">
