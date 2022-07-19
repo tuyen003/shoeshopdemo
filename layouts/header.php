@@ -13,8 +13,8 @@ session_start();?>
       <link type="image/png" sizes="16x16" rel="icon" href="assets/favicon/icons8-shoe-16.png">
       <link type="image/png" sizes="96x96" rel="icon" href="assets/favicon/icons8-shoe-96.png">
 
-      <!-- <base href="https://php-shoeshop.herokuapp.com/"> -->
-      <base href="http://localhost/shoeshop.vn/">
+      <base href="https://php-shoeshop.herokuapp.com/">
+<!--       <base href="http://localhost/shoeshop.vn/"> -->
 
   <?php 
   function header_title($title){
