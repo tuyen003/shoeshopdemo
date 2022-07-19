@@ -1,0 +1,4 @@
+Nhược điểm:
++ Giao diện vẫn có phần chưa đồng bộ
++ Cấu trúc thư mục file chưa được tối ưu, và khó mở rộng.
++ Xử lý các chức năng chưa được tối ưu, còn nhiều nhược điểm.
