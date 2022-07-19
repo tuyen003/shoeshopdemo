@@ -5,50 +5,6 @@ ob_start();
 header_title("Trang chủ");
 ob_end_flush();
 include("layouts/slideshow.php"); ?>
-<section id="shop__now" class="shop__now py-4">
-      <div class="container">
-        <div class="row">
-        <?php for ($i=0; $i < 3 ; $i++) { ?>
-          <div class="col-md col-sm mb">
-            <div class="shop__now__detail">
-              <div class="shop__now__img">
-                <img
-                  src="assets/images/sn-1.png"
-                  alt="shoes shopnow"
-                  class=""
-                />
-              </div>
-
-              <div class="shop__now__description">
-                <div class="shop__now__title">
-                  <span class="shop__now__name"
-                    >Men- ON | Swiss Performance</span
-                  >
-                  <span class="shop__now__cate">running shoe</span>
-                </div>
-
-                <div class="shop__now__price">
-                  <span class="shop__now__price--old">$95</span>
-                  <span class="shop__now__price--new">$65</span>
-                </div>
-
-                <div
-                  class="shop__now__action"
-                  onclick="window.location.href='product-detail.html'"
-                >
-                  <a href="?page=shop" class="shop__now__btn"
-                    >shop now <i class="fa-solid fa-caret-right"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        <?php } ?>
-
-        </div>
-      </div>
-    </section>
-
 
     <section id="sale-product" class="sale-product my-5 py-5">
    
