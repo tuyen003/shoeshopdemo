@@ -54,7 +54,7 @@
 
     <div class="copyright pt-2">
       <div class="row mx-auto d-flex justify-content-between align-items-center">
-        <div class="col-lg-3 col-md-5 col-sm-12 mb-4 text-nowrap">
+        <div class="col-lg-3 col-md-5 col-sm-12 mb-4 text-nowrap" style="padding: 0;">
           <p>ShoesShop @<span id="year">2025</span> All right reserved</p>
         </div>
         <div class="d-flex col-lg-3 col-md-5 col-sm-12 mb-4 text-nowrap icon-list">
