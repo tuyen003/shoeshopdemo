@@ -92,12 +92,13 @@ th:last-child {
 .checkout-btn {
   border: none;
   outline: none;
-  padding: 1rem 2rem;
+  padding: 1.25rem 8rem;
   background-color: #fb774b;
   color: #fff;
-  border-radius: 1rem;
+  border-radius: 0.35rem;
   font-size: 1.7rem;
   font-weight: 500;
+  margin-top: 2rem;
 }
 
 .checkout-btn:hover {
