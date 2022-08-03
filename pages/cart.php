@@ -67,8 +67,8 @@
 ?> 
 
 
-    <section class="cart container my-5 py-5">
-      <div class="container mt-5">
+    <section class="cart container my-5">
+      <div class="container">
         <h2 class="font-weight-bold form-title">Giỏ hàng</h2>
         <hr>
       </div>
