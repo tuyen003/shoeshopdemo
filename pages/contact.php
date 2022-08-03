@@ -3,8 +3,8 @@
   header_title("Liên hệ");
 ?> 
  
- <section id="contact" class="container my-5 py-5">
-      <div class="container text-center mt-5">
+ <section id="contact" class="container py-5">
+      <div class="container text-center">
         <h3 class="form-title">Liên hệ</h3>
         <hr class="mx-auto">
 
