@@ -70,7 +70,7 @@
     <section class="cart container my-5">
       <div class="container text-center">
         <h2 class="font-weight-bold form-title">Giỏ hàng</h2>
-        <hr mx-auto>
+        <hr class="mx-auto">
       </div>
 
       <table class="mt-5 pt-5">
