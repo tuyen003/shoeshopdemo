@@ -16,9 +16,9 @@
 ?> 
 
 <section class="wishlist py-5" id="wishlist">
-    <div class="container">
+    <div class="container text-center">
         <h5 class="form-title">Sản phẩm yêu thích</h5>
-        <hr>
+        <hr class="mx-auto">
     </div>
 
     <div class="container">
