@@ -428,6 +428,7 @@ footer p {
   position: fixed;
   right: 2.5rem;
   bottom: 5rem;
+  z-index: 99;
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
