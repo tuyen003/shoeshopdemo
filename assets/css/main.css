@@ -467,15 +467,10 @@ footer p {
 **********     MESS FB      **********
 ======================================
 */
-iframe {
-  bottom: 100px !important;
-  margin: 0px 8px !important;
-  right: -7px !important;
-  transform: scale(0.7) !important;
-}
+
 ._94ve {
-  bottom: 70px !important;
-  left: 8px !important;
+/*   bottom: 70px !important;
+  left: 8px !important; */
 }
 
 /* 
